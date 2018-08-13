@@ -46,7 +46,7 @@ final class Configurations {
     
     static let preDefaultNodeUri = "remote.havenprotocol.com:17750"
     static let defaultNodeUri = "remote.havenprotocol.com:17750"
-    static let defaultCurreny = Currency.usd
+    static let defaultCurreny = Currency.btc
     static var termsOfUseUrl: URL? {
         return Bundle.main.url(forResource: "Terms_of_Use", withExtension: "rtf")
     }
