@@ -159,6 +159,7 @@
 		0CFCAFE41FD5EFE7004EF698 /* WalletsSeedFetchable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CFCAFE31FD5EFE7004EF698 /* WalletsSeedFetchable.swift */; };
 		0CFCAFE61FD5F3A2004EF698 /* Wallets+WalletsSeedFetchable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CFCAFE51FD5F3A2004EF698 /* Wallets+WalletsSeedFetchable.swift */; };
 		7D688A03F774B0C06AB7D747 /* Pods_CakeWallet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CECAE07ED95A367F0CB6700 /* Pods_CakeWallet.framework */; };
+		8DEA7306212209290054D3DF /* liblmdb.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DEA7305212209290054D3DF /* liblmdb.a */; };
 		CA032E2E2056C7DE009B24B9 /* ExchangeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA032E2D2056C7DE009B24B9 /* ExchangeView.swift */; };
 		CA032E302056F937009B24B9 /* ExchangeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA032E2F2056F937009B24B9 /* ExchangeTableViewCell.swift */; };
 		CA0F61E5203C8D0A005EDF2C /* DonationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA0F61E4203C8D0A005EDF2C /* DonationView.swift */; };
@@ -361,8 +362,6 @@
 		0CB2CA321FD84C28002EF5D0 /* TransactionDetailsUITableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDetailsUITableViewCell.swift; sourceTree = "<group>"; };
 		0CBC9C352006A3F500EC57E8 /* NodeSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NodeSettingsView.swift; sourceTree = "<group>"; };
 		0CBC9C372006A40C00EC57E8 /* NodeSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NodeSettingsViewController.swift; sourceTree = "<group>"; };
-		0CC106892001658200C31F9C /* libwallet_merged.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libwallet_merged.a; path = "External/monero-core/monero/lib-arm64/libwallet_merged.a"; sourceTree = "<group>"; };
-		0CC1068D2001A1A300C31F9C /* libboost.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libboost.a; path = External/Boost/build/libs/boost/lib/arm64/libboost.a; sourceTree = "<group>"; };
 		0CC827FB1FD0D4C5002A5796 /* WalletsCreating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletsCreating.swift; sourceTree = "<group>"; };
 		0CC827FD1FD0D4E4002A5796 /* WalletsRecoverable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletsRecoverable.swift; sourceTree = "<group>"; };
 		0CC827FF1FD0D4FF002A5796 /* WalletsLoadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletsLoadable.swift; sourceTree = "<group>"; };
@@ -393,11 +392,6 @@
 		0CE7392E1FA9EC2900F6DDDC /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		0CE739301FA9EC4100F6DDDC /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		0CE8531D1FC486D800E1D556 /* KeychainStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainStorage.swift; sourceTree = "<group>"; };
-		0CEEE3461FEDE21000F8C4C9 /* libboost.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libboost.a; path = External/Boost/libs/boost/ios/libboost.a; sourceTree = "<group>"; };
-		0CEEE3481FEDE22100F8C4C9 /* libepee.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libepee.a; path = "External/monero-core/monero/lib-ios/libepee.a"; sourceTree = "<group>"; };
-		0CEEE3491FEDE22100F8C4C9 /* libeasylogging.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libeasylogging.a; path = "External/monero-core/monero/lib-ios/libeasylogging.a"; sourceTree = "<group>"; };
-		0CEEE34A1FEDE22100F8C4C9 /* libwallet_merged.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libwallet_merged.a; path = "External/monero-core/monero/lib-ios/libwallet_merged.a"; sourceTree = "<group>"; };
-		0CEEE34B1FEDE22100F8C4C9 /* libunbound.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libunbound.a; path = "External/monero-core/monero/lib-ios/libunbound.a"; sourceTree = "<group>"; };
 		0CEEE3501FEDE23200F8C4C9 /* libcrypto.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcrypto.a; path = External/OpenSSL/lib/libcrypto.a; sourceTree = "<group>"; };
 		0CEEE3511FEDE23200F8C4C9 /* libssl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libssl.a; path = External/OpenSSL/lib/libssl.a; sourceTree = "<group>"; };
 		0CFCAFE31FD5EFE7004EF698 /* WalletsSeedFetchable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletsSeedFetchable.swift; sourceTree = "<group>"; };
@@ -405,6 +399,7 @@
 		1CECAE07ED95A367F0CB6700 /* Pods_CakeWallet.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CakeWallet.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3848B085667C2AC96BB45F12 /* Pods-CakeWallet.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CakeWallet.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CakeWallet/Pods-CakeWallet.debug.xcconfig"; sourceTree = "<group>"; };
 		561E69E83825EF25D7339410 /* Pods_Cryptonist.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Cryptonist.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8DEA7305212209290054D3DF /* liblmdb.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = liblmdb.a; path = "External/monero-gui/monero/build/release/external/db_drivers/liblmdb/liblmdb.a"; sourceTree = "<group>"; };
 		CA032E2D2056C7DE009B24B9 /* ExchangeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeView.swift; sourceTree = "<group>"; };
 		CA032E2F2056F937009B24B9 /* ExchangeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeTableViewCell.swift; sourceTree = "<group>"; };
 		CA0F61E4203C8D0A005EDF2C /* DonationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonationView.swift; sourceTree = "<group>"; };
@@ -415,12 +410,9 @@
 		CA2BF29E20792B360000327A /* NodeUITableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NodeUITableViewCell.swift; sourceTree = "<group>"; };
 		CA30F12C207698B90058C4CF /* NodesList.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = NodesList.plist; sourceTree = "<group>"; };
 		CA3EA3F220669633005A7D5C /* UIScreen+sizeType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScreen+sizeType.swift"; sourceTree = "<group>"; };
-		CA4830DA206ADD160071066A /* libepee.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libepee.a; path = "External/monero-gui/monero/lib/libepee.a"; sourceTree = "<group>"; };
 		CA4830DB206ADD160071066A /* libunbound.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libunbound.a; path = "External/monero-gui/monero/lib/libunbound.a"; sourceTree = "<group>"; };
 		CA4830DC206ADD160071066A /* libminiupnpc.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libminiupnpc.a; path = "External/monero-gui/monero/lib/libminiupnpc.a"; sourceTree = "<group>"; };
-		CA4830DD206ADD160071066A /* libwallet_merged.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libwallet_merged.a; path = "External/monero-gui/monero/lib/libwallet_merged.a"; sourceTree = "<group>"; };
 		CA4830E2206ADD2D0071066A /* libeasylogging.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libeasylogging.a; path = "External/monero-gui/monero/lib/libeasylogging.a"; sourceTree = "<group>"; };
-		CA4830E3206ADD2D0071066A /* liblmdb.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = liblmdb.a; path = "External/monero-gui/monero/lib/liblmdb.a"; sourceTree = "<group>"; };
 		CA4830E7206AF7050071066A /* TextViewUITableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewUITableViewCell.swift; sourceTree = "<group>"; };
 		CA4DF8B02034C2E3002B0AB4 /* RecoveryWalletOptionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecoveryWalletOptionsView.swift; sourceTree = "<group>"; };
 		CA4DF8B22034C305002B0AB4 /* RecoveryWalletOptionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecoveryWalletOptionsViewController.swift; sourceTree = "<group>"; };
@@ -464,6 +456,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8DEA7306212209290054D3DF /* liblmdb.a in Frameworks */,
 				CABBD20E2070283A008AB5B5 /* libeasylogging.a in Frameworks */,
 				CABBD20F2070283A008AB5B5 /* libepee.a in Frameworks */,
 				CABBD2102070283A008AB5B5 /* libunbound.a in Frameworks */,
@@ -1025,26 +1018,17 @@
 		7E8099D1BF3D5573A4A7316D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8DEA7305212209290054D3DF /* liblmdb.a */,
 				CA4830E2206ADD2D0071066A /* libeasylogging.a */,
-				CA4830E3206ADD2D0071066A /* liblmdb.a */,
-				CA4830DA206ADD160071066A /* libepee.a */,
 				CA4830DC206ADD160071066A /* libminiupnpc.a */,
 				CA4830DB206ADD160071066A /* libunbound.a */,
-				CA4830DD206ADD160071066A /* libwallet_merged.a */,
 				0C056A6B2006637F0016AEF1 /* libboost.a */,
 				0C1718842003E91A00EA1B02 /* libeasylogging.a */,
 				0C1718852003E91A00EA1B02 /* libepee.a */,
 				0C1718832003E91A00EA1B02 /* libunbound.a */,
 				0C1718862003E91A00EA1B02 /* libwallet_merged.a */,
-				0CC1068D2001A1A300C31F9C /* libboost.a */,
-				0CC106892001658200C31F9C /* libwallet_merged.a */,
 				0CEEE3501FEDE23200F8C4C9 /* libcrypto.a */,
 				0CEEE3511FEDE23200F8C4C9 /* libssl.a */,
-				0CEEE3491FEDE22100F8C4C9 /* libeasylogging.a */,
-				0CEEE3481FEDE22100F8C4C9 /* libepee.a */,
-				0CEEE34B1FEDE22100F8C4C9 /* libunbound.a */,
-				0CEEE34A1FEDE22100F8C4C9 /* libwallet_merged.a */,
-				0CEEE3461FEDE21000F8C4C9 /* libboost.a */,
 				561E69E83825EF25D7339410 /* Pods_Cryptonist.framework */,
 				1CECAE07ED95A367F0CB6700 /* Pods_CakeWallet.framework */,
 			);
@@ -1170,7 +1154,6 @@
 				0C289FDA1F87CF4A003C1826 /* Sources */,
 				0C289FDB1F87CF4A003C1826 /* Frameworks */,
 				0C289FDC1F87CF4A003C1826 /* Resources */,
-				25E9E6BC27D55A3871E3DAEB /* [CP] Copy Pods Resources */,
 				134425624B13E029A415AD0C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
@@ -1213,7 +1196,7 @@
 					0C289FDD1F87CF4A003C1826 = {
 						CreatedOnToolsVersion = 9.0;
 						LastSwiftMigration = 0900;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 					0C289FF11F87CF4B003C1826 = {
 						CreatedOnToolsVersion = 9.0;
@@ -1303,21 +1286,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CakeWallet/Pods-CakeWallet-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		25E9E6BC27D55A3871E3DAEB /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CakeWallet/Pods-CakeWallet-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		D67DA56A2B5D03B264CCC15B /* [CP] Check Pods Manifest.lock */ = {
@@ -1673,7 +1641,7 @@
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = "";
 				ENABLE_BITCODE = NO;
@@ -1721,7 +1689,7 @@
 					"$(PROJECT_DIR)/External/monero-gui/monero/lib-armv8-a",
 					"$(PROJECT_DIR)/External/ofxiOSBoost/libs/boost/ios",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.fotolockr.cakewallet;
+				PRODUCT_BUNDLE_IDENTIFIER = com.havenprotocol.cakewallet;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1745,7 +1713,7 @@
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = "";
 				ENABLE_BITCODE = NO;
@@ -1793,7 +1761,7 @@
 					"$(PROJECT_DIR)/External/monero-gui/monero/lib-armv8-a",
 					"$(PROJECT_DIR)/External/ofxiOSBoost/libs/boost/ios",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.fotolockr.cakewallet;
+				PRODUCT_BUNDLE_IDENTIFIER = com.havenprotocol.cakewallet;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";

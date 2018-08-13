@@ -38,6 +38,22 @@ DEPENDENCIES:
   - SwiftSoup
   - SwiftyJSON
 
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Dip
+    - FontAwesome.swift
+    - IQKeyboardManagerSwift
+    - PromiseKit
+    - QRCode
+    - QRCodeReader.swift
+    - SkyFloatingLabelTextField
+    - SnapKit
+    - Starscream
+    - SwiftKeychainWrapper
+    - SwiftSocket
+    - SwiftSoup
+    - SwiftyJSON
+
 SPEC CHECKSUMS:
   Dip: 316ad036509eaf3ef78e19699f32a9e01a5b3c3e
   FontAwesome.swift: b4e4c8ccbbecb12f9b592bc533ff237af3706667
@@ -55,4 +71,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: 30e7bb38d09baf3b936a07c39e3f08bf84f23386
 
-COCOAPODS: 1.4.0
+COCOAPODS: 1.5.3
