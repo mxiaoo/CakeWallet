@@ -44,8 +44,8 @@ final class Configurations {
         }
     }
     
-    static let preDefaultNodeUri = "node.xmrbackb.one:18081"
-    static let defaultNodeUri = "opennode.xmr-tw.org:18089"
+    static let preDefaultNodeUri = "remote.havenprotocol.com:17750"
+    static let defaultNodeUri = "remote.havenprotocol.com:17750"
     static let defaultCurreny = Currency.usd
     static var termsOfUseUrl: URL? {
         return Bundle.main.url(forResource: "Terms_of_Use", withExtension: "rtf")

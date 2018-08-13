@@ -4,43 +4,7 @@
 <array>
 	<dict>
 		<key>uri</key>
-		<string>node.bohemianpool.com:18081</string>
-	</dict>
-	<dict>
-		<key>uri</key>
-		<string>node.xmr.pt:18081
-node.xmr.pt:18081
-node.xmr.pt:18081
-node.xmr.pt:18081
-node.xmr.pt:18081
-node.xmr.pt:18081
-</string>
-	</dict>
-	<dict>
-		<key>uri</key>
-		<string>node.xmr.ru:13666</string>
-	</dict>
-	<dict>
-		<key>uri</key>
-		<string>opennode.xmr-tw.org:18089</string>
-	</dict>
-	<dict>
-		<key>uri</key>
-		<string>node.moneroworld.com:18089</string>
-	</dict>
-	<dict>
-		<key>isDefault</key>
-		<true/>
-		<key>uri</key>
-		<string>node.xmrbackb.one:18081</string>
-	</dict>
-	<dict>
-		<key>uri</key>
-		<string>node.viaxmr.com:18081</string>
-	</dict>
-	<dict>
-		<key>uri</key>
-		<string>ushouldrunyourownnode.moneroworld.com:18089</string>
+		<string>remote.havenprotocol.com:17750</string>
 	</dict>
 </array>
 </plist>

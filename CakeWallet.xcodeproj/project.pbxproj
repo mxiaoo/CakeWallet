@@ -410,9 +410,7 @@
 		CA2BF29E20792B360000327A /* NodeUITableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NodeUITableViewCell.swift; sourceTree = "<group>"; };
 		CA30F12C207698B90058C4CF /* NodesList.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = NodesList.plist; sourceTree = "<group>"; };
 		CA3EA3F220669633005A7D5C /* UIScreen+sizeType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScreen+sizeType.swift"; sourceTree = "<group>"; };
-		CA4830DB206ADD160071066A /* libunbound.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libunbound.a; path = "External/monero-gui/monero/lib/libunbound.a"; sourceTree = "<group>"; };
 		CA4830DC206ADD160071066A /* libminiupnpc.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libminiupnpc.a; path = "External/monero-gui/monero/lib/libminiupnpc.a"; sourceTree = "<group>"; };
-		CA4830E2206ADD2D0071066A /* libeasylogging.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libeasylogging.a; path = "External/monero-gui/monero/lib/libeasylogging.a"; sourceTree = "<group>"; };
 		CA4830E7206AF7050071066A /* TextViewUITableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewUITableViewCell.swift; sourceTree = "<group>"; };
 		CA4DF8B02034C2E3002B0AB4 /* RecoveryWalletOptionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecoveryWalletOptionsView.swift; sourceTree = "<group>"; };
 		CA4DF8B22034C305002B0AB4 /* RecoveryWalletOptionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecoveryWalletOptionsViewController.swift; sourceTree = "<group>"; };
@@ -1019,9 +1017,7 @@
 			isa = PBXGroup;
 			children = (
 				8DEA7305212209290054D3DF /* liblmdb.a */,
-				CA4830E2206ADD2D0071066A /* libeasylogging.a */,
 				CA4830DC206ADD160071066A /* libminiupnpc.a */,
-				CA4830DB206ADD160071066A /* libunbound.a */,
 				0C056A6B2006637F0016AEF1 /* libboost.a */,
 				0C1718842003E91A00EA1B02 /* libeasylogging.a */,
 				0C1718852003E91A00EA1B02 /* libepee.a */,
