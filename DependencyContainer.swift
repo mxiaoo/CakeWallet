@@ -502,7 +502,7 @@ extension DependencyContainer {
                     UINavigationController(rootViewController: try! container.resolve() as DashboardViewController),
                     UINavigationController(rootViewController: try! container.resolve() as SendViewController),
                     UINavigationController(rootViewController: try! container.resolve() as ReceiveViewController),
-                    UINavigationController(rootViewController: try! container.resolve() as ServicesViewController),
+//                    UINavigationController(rootViewController: try! container.resolve() as ServicesViewController),
                     UINavigationController(rootViewController: try! container.resolve() as SettingsViewController)
                 ])) }
             container.register { RootFlow(window: $0, account: try! container.resolve() as AccountImpl) }
