@@ -230,9 +230,10 @@ final class SettingsViewController: BaseViewController<SettingsView>, UITableVie
 //        sections[.donation] = [supportUs]
         sections[.advanced] = [nodeSettings]
         
-        let email = "info@caketech.io"
-        let telegram = "https://t.me/cake_wallet"
-        let twitter = "cakewalletXMR"
+        let website = "https://havenprotocol.com/"
+        let telegram = "https://t.me/Haven_Protocol"
+        let discord = "https://discord.gg/vWQ2GZX"
+        let twitter = "HavenProtocol"
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.paragraphSpacing = 5
         paragraphStyle.lineSpacing = 5
@@ -240,13 +241,19 @@ final class SettingsViewController: BaseViewController<SettingsView>, UITableVie
             NSAttributedStringKey.font : UIFont.avenirNextMedium(size: 15),
             NSAttributedStringKey.paragraphStyle: paragraphStyle
         ]
-        let attributedString = NSMutableAttributedString(string: "Email: \(email)\nTelegram: \(telegram)\nTwitter: @\(twitter)", attributes: attributes)
+        let attributedString = NSMutableAttributedString(string: "Website: \(website)\nTelegram: \(telegram)\nDiscord: \(discord)\nTwitter: @\(twitter)", attributes: attributes)
+        
+        let websiteAddressRange = attributedString.mutableString.range(of: website)
+        attributedString.addAttribute(.link, value: website, range: websiteAddressRange)
+        
         let telegramAddressRange = attributedString.mutableString.range(of: telegram)
         attributedString.addAttribute(.link, value: telegram, range: telegramAddressRange)
+        
+        let discordAddressRange = attributedString.mutableString.range(of: discord)
+        attributedString.addAttribute(.link, value: discord, range: discordAddressRange)
+        
         let twitterAddressRange = attributedString.mutableString.range(of: "@\(twitter)")
         attributedString.addAttribute(.link, value: "https://twitter.com/\(twitter)", range: twitterAddressRange)
-        let emailAddressRange = attributedString.mutableString.range(of: email)
-        attributedString.addAttribute(.link, value: "mailto:\(email)", range: emailAddressRange)
         
         sections[.contactUs] = [SettingsTextViewCellItem(attributedString: attributedString)]
     }
@@ -284,7 +291,7 @@ final class SettingsViewController: BaseViewController<SettingsView>, UITableVie
         guard
             let section = SettingsSections(rawValue: indexPath.section),
             section != .contactUs else {
-            return 100
+            return 130
         }
         
         return 50
