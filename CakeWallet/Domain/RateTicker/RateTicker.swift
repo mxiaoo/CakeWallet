@@ -23,7 +23,7 @@ func convertXMRtoUSD(amount: String, rate: Double) -> String {
     }
     
     let result = balance * rate
-    return String(format: "%.2f", result)
+    return String(format: "%.8f", result)
 }
 
 func convertUSDtoXMR(amount: String, rate: Double) -> String {

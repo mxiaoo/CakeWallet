@@ -7,34 +7,21 @@
 //
 
 import Foundation
-import Starscream
 
 final class MoneroRateTicker: RateTicker {
-    private(set) var rate: Double {
+    private(set) var rate: Double = 0 {
         didSet {
             emit(rate: rate)
         }
     }
-    private var rateRaw: Double
-    private var socket: WebSocket
-    private var listeners: [RateListener]
+    private var rateRaw: Double = 0
+    private var listeners = [RateListener]()
     private let account: CurrencySettingsConfigurable
+    private let url = URL(string: "https://tradeogre.com/api/v1/ticker/BTC-XHV")!
     
     init(account: CurrencySettingsConfigurable) {
         self.account = account
-        // FIX-ME: Unnamed constant
-        
-        let url = URL(string: "wss://api.bitfinex.com/ws")!
-        socket = WebSocket(url: url)
-        rate = 0
-        rateRaw = 0
-        listeners = []
-        config()
-        connect()
-    }
-    
-    deinit {
-        socket.disconnect()
+        fetchTicker()
     }
     
     func add(listener: @escaping (Currency, Double) -> Void) {
@@ -42,9 +29,37 @@ final class MoneroRateTicker: RateTicker {
         listener(account.currency, rate)
     }
     
-    func connect() {
-        DispatchQueue.global(qos: .background).async {
-            self.socket.connect()
+    func fetchTicker() {
+        let url = self.url
+        DispatchQueue.global(qos: .background).async { [weak self] in
+            var request = URLRequest(url: url)
+            request.httpMethod = "GET"
+            
+            let connection = URLSession.shared.dataTask(with: request) { data, response, error in
+                do {
+                    if let error = error {
+                        print("[MoneroRateTicker] [connect] \(error)")
+                        return
+                    }
+                    
+                    guard
+                        let data = data,
+                        let decoded = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any],
+                        let priceString = decoded["price"] as? String,
+                        let price = Double(priceString) else {
+                            print("[MoneroRateTicker] [connect] \(String(describing: error))")
+                            return
+                    }
+                    
+                    DispatchQueue.main.async {
+                        self?.setRate(price)
+                    }
+                } catch let error {
+                    print("[MoneroRateTicker] [connect] \(error)")
+                }
+            }
+            
+            connection.resume()
         }
     }
     
@@ -60,62 +75,6 @@ final class MoneroRateTicker: RateTicker {
                 self.rate = xmrusdRate * currencyRate
             }.catch { error in
                 print(error)
-        }
-    }
-    
-    private func config() {
-        let event = [
-            "event": "subscribe",
-            "channel": "ticker",
-            "pair": "XMRUSD"
-        ]
-        
-        account.subscribeOnRateChange { [weak self] currencyRate in
-            if let rateRaw = self?.rateRaw {
-                let rate = rateRaw * currencyRate
-                self?.rate = rate
-            }
-        }
-        
-        socket.onText = { text in
-            DispatchQueue.global(qos: .background).async {
-                do {
-                    guard
-                        let data = text.data(using: .utf8),
-                        let json = try JSONSerialization.jsonObject(with: data) as? [Double] else {
-                            return
-                    }
-                    
-                    let price = json[3]
-                    
-                    DispatchQueue.main.async {
-                        self.setRate(price)
-                    }
-                } catch {
-                    print(error.localizedDescription)
-                }
-            }
-        }
-        
-        socket.onConnect = {
-            do {
-                let jsonData = try JSONSerialization.data(withJSONObject: event)
-                guard let json = String(data: jsonData, encoding: .utf8) else {
-                    return
-                }
-                
-                self.socket.write(string: json)
-            } catch {
-                print("JSONSerialization error: \(error.localizedDescription)")
-            }
-        }
-        
-        socket.onDisconnect = { error in
-            if let error = error {
-                print("MoneroRateTicker: Disconnected - \(error)")
-            } else {
-                print("MoneroRateTicker: Disconnected")
-            }
         }
     }
 }
