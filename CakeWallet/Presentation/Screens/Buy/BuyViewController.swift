@@ -41,7 +41,7 @@ final class BuyViewController: BaseViewController<BuyView> {
         }
         
         contentView.addressDescriptionLabel.text = "To redeem a QWKMonero card, enter the scratch-off card number below."
-        contentView.walletDescirptionLabel.text = "The xmr will be deposited into your wallet (\(wallet.name)) unless you change the xmr address in the above field."
+        contentView.walletDescirptionLabel.text = "The XHV will be deposited into your wallet (\(wallet.name)) unless you change the XHV address in the above field."
         contentView.resetButton.addTarget(self, action: #selector(resetAction), for: .touchUpInside)
         contentView.addressScanQrButton.addTarget(self, action: #selector(scanQrAction), for: .touchUpInside)
         contentView.poweredByLabel.attributedText =  NSAttributedString(

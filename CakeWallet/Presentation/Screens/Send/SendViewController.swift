@@ -108,7 +108,7 @@ final class SendViewController: BaseViewController<SendView> {
     }
     
     private func updateUnlockedBalance(_ unlockedBalance: Amount) {
-        unlockedBalanceLabel.text = "XMR \(unlockedBalance.formatted())"
+        unlockedBalanceLabel.text = "XHV \(unlockedBalance.formatted())"
     }
     
     @objc
@@ -267,9 +267,9 @@ final class SendViewController: BaseViewController<SendView> {
                     let rate = self?.rateTicker.rate,
                     let currency = self?.currency {
                     let ratedAmount = convertXMRtoUSD(amount: amount.formatted(), rate: rate)
-                    estimatedValue = "XMR \(amount.formatted()) (\(currency.symbol) \(ratedAmount))"
+                    estimatedValue = "XHV \(amount.formatted()) (\(currency.symbol) \(ratedAmount))"
                 } else {
-                    estimatedValue = "XMR \(amount.formatted())"
+                    estimatedValue = "XHV \(amount.formatted())"
                 }
                 
                 self?.contentView.estimatedValueLabel.text = estimatedValue

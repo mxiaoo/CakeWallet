@@ -222,7 +222,7 @@ final class DashboardViewController: BaseViewController<DashboardView>,
     
     private func showWarningOnReceive() {
         UIAlertController.showInfo(
-            message: "Do not send XMR to this address until the update is complete.\nPlease wait.",
+            message: "Do not send XHV to this address until the update is complete.\nPlease wait.",
             presentOn: self)
     }
 }

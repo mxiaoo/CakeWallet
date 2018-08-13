@@ -164,7 +164,7 @@ final class ReceiveViewController: BaseViewController<ReceiveView>, MFMailCompos
         }
     }
     
-    private func sendEmail(subject: String = "My XMR address", text: String) {
+    private func sendEmail(subject: String = "My XHV address", text: String) {
         guard MFMailComposeViewController.canSendMail() else {
             showError(MessageUIEmailError.emailUnavailable)
             return

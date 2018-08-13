@@ -23,7 +23,7 @@ final class SendView: BaseView {
     
     required init() {
         addressTextField = FloatingLabelTextField(placeholder: "Monero address")
-        amountInMoneroTextField = FloatingLabelTextField(placeholder: "XMR: 0.0000", title: "XMR")
+        amountInMoneroTextField = FloatingLabelTextField(placeholder: "XHV: 0.0000", title: "XHV")
         amountInAnotherCuncurrencyTextField = FloatingLabelTextField(placeholder: "USD: 0.00", title: "USD (approximate)")
         paymenyIdTextField = FloatingLabelTextField(placeholder: "Payment ID (optional)", title: "Payment ID")
         sendButton = PrimaryButton(title: "Send".uppercased())

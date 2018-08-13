@@ -63,7 +63,7 @@ final class ExchangeResultViewController: BaseViewController<ExchangeResultView>
         setAddressDepositAmount(trade.inputAddress)
         
         if trade.inputCurrency == .monero {
-            contentView.preConfirmDescriptionLabel.text = "By pressing confirm, you will be sending \(amount.formatted()) XMR from your wallet called \(account.currentWallet.name) to the address shown above.\n\nPlease press confirm to continue or go back to change the amounts."
+            contentView.preConfirmDescriptionLabel.text = "By pressing confirm, you will be sending \(amount.formatted()) XHV from your wallet called \(account.currentWallet.name) to the address shown above.\n\nPlease press confirm to continue or go back to change the amounts."
         } else {
             contentView.preConfirmDescriptionLabel.text = "Please send \(amount.formatted()) to the address/QR code shown above"
             contentView.confirmButton.isHidden = true
@@ -93,7 +93,7 @@ final class ExchangeResultViewController: BaseViewController<ExchangeResultView>
     
     @objc
     private func confirm() {
-        let alert = UIAlertController(title: nil, message:  "Send XMR \(amount.formatted()) to exchange ?", preferredStyle: .alert)
+        let alert = UIAlertController(title: nil, message:  "Send XHV \(amount.formatted()) to exchange ?", preferredStyle: .alert)
         let send = UIAlertAction(title: "Send", style: .default) { [weak self] _ in
             self?.presentVerifyPinScreen?() {
                 self?.sendMonero()

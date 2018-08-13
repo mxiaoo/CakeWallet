@@ -61,12 +61,12 @@ final class BalanceView: BaseView {
     override func configureView() {
         super.configureView()
         backgroundColor = .clear
-        balanceDescriptionLabel.text = "Total balance (XMR)".uppercased()
+        balanceDescriptionLabel.text = "Total balance (XHV)".uppercased()
         balanceDescriptionLabel.textColor = .lightGray
         balanceLabel.numberOfLines = 0
         alternativeBalanceDescriptionLabel.text = "Rate balance".uppercased()
         alternativeBalanceDescriptionLabel.textColor = .lightGray
-        unlockedBalanceDescriptionLabel.text = "Available  balance (XMR)".uppercased()
+        unlockedBalanceDescriptionLabel.text = "Available  balance (XHV)".uppercased()
         unlockedBalanceDescriptionLabel.textColor = .lightGray
         
         // FIX-ME: Unnamed constant
