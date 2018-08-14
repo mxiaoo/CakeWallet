@@ -41,8 +41,8 @@ final class SecondaryButton: UIButton {
         
         // FIX-ME: Unnamed constant
         
-        backgroundColor = UIColor(hex: 0xE5ECF4)
-        setTitleColor(.gray, for: .normal)
+        backgroundColor = UIColor.havenGrey
+        setTitleColor(.havenWhite, for: .normal)
 //        layer.borderWidth = 1
 //        layer.borderColor = UIColor.gray.cgColor
         layer.masksToBounds = true
