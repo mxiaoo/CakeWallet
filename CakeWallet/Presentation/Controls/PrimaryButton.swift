@@ -32,10 +32,7 @@ final class PrimaryButton: UIButton {
     }
     
     override func configureView() {
-        
-        // FIX-ME: Unnamed constant
-        
-        backgroundColor = .pictonBlue
+        backgroundColor = .havenGreen
         setTitleColor(.white, for: .normal)
         layer.masksToBounds = false
         layer.shadowRadius = 20

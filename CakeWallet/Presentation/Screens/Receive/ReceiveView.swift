@@ -104,7 +104,7 @@ final class ReceiveView: BaseView {
         innerView.addSubview(integratedAddressTextField)
         innerView.addSubview(copyPaymentIdButton)
         innerView.addSubview(copyIntegratedAddressButton)
-        backgroundColor = .whiteSmoke
+        backgroundColor = .havenLightGrey
         addSubview(copyAddressButton)
         addSubview(innerView)
         addSubview(generatePaymentIdButton)

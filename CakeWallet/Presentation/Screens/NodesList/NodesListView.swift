@@ -23,7 +23,7 @@ final class NodesListView: BaseView {
     
     override func configureView() {
         super.configureView()
-        table.backgroundColor = .whiteSmoke
+        table.backgroundColor = .havenLightGrey
         table.rowHeight = 50
         table.sectionHeaderHeight = 50
         table.tableFooterView = UIView()

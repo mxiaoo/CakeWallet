@@ -20,7 +20,7 @@ final class ServicesView: BaseView {
     
     override func configureView() {
         super.configureView()
-        backgroundColor = .whiteSmoke
+        backgroundColor = .havenLightGrey
         addSubview(segmentedControl)
         addSubview(innerView)
     }

@@ -239,7 +239,8 @@ final class SettingsViewController: BaseViewController<SettingsView>, UITableVie
         paragraphStyle.lineSpacing = 5
         let attributes = [
             NSAttributedStringKey.font : UIFont.avenirNextMedium(size: 15),
-            NSAttributedStringKey.paragraphStyle: paragraphStyle
+            NSAttributedStringKey.paragraphStyle: paragraphStyle,
+            NSAttributedStringKey.foregroundColor: UIColor.havenGreen
         ]
         let attributedString = NSMutableAttributedString(string: "Website: \(website)\nTelegram: \(telegram)\nDiscord: \(discord)\nTwitter: @\(twitter)", attributes: attributes)
         
@@ -334,8 +335,6 @@ final class SettingsViewController: BaseViewController<SettingsView>, UITableVie
             titleLabel.text = "Advanced"
         case .contactUs:
             titleLabel.text = "Contact us"
-        default:
-            return nil
         }
         
         return view

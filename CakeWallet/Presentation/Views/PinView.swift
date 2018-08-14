@@ -36,7 +36,7 @@ final class PinView: UIView, PinableView {
         if let circleShape = circleShape {
             circleShape.path = circlePath.cgPath
             circleShape.fillColor = UIColor.clear.cgColor
-            circleShape.strokeColor = UIColor.lightGray.cgColor
+            circleShape.strokeColor = UIColor.havenLightGrey.cgColor
             circleShape.lineWidth = desiredLineWidth
             
             layer.addSublayer(circleShape)
@@ -44,12 +44,12 @@ final class PinView: UIView, PinableView {
     }
     
     func clear() {
-        circleShape?.strokeColor = UIColor.lightGray.cgColor
+        circleShape?.strokeColor = UIColor.havenLightGrey.cgColor
         circleShape?.fillColor = UIColor.clear.cgColor
     }
     
     func fill() {
-        circleShape?.strokeColor = UIColor.pictonBlue.cgColor
-        circleShape?.fillColor = UIColor.pictonBlue.cgColor
+        circleShape?.strokeColor = UIColor.havenGreen.cgColor
+        circleShape?.fillColor = UIColor.havenGreen.cgColor
     }
 }

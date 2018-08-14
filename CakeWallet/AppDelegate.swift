@@ -117,12 +117,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     private func setAppearance() {
-        UITabBar.appearance().tintColor = .pictonBlue
-//        UITabBar.appearance().unselectedItemTintColor = UIColor(hex: 0xC0D4E2)
+        UIApplication.shared.statusBarStyle = .lightContent
+        UITabBar.appearance().tintColor = UIColor.havenGreen
+        UITabBar.appearance().unselectedItemTintColor = UIColor.havenTextLightGrey
+        UITabBar.appearance().barTintColor = UIColor.havenBlack
+        UITabBar.appearance().isTranslucent = false
         UINavigationBar.appearance().isTranslucent = false
-        UINavigationBar.appearance().tintColor = UIColor(hex: 0x006494) // FIX-ME: Unnamed constant
+        UINavigationBar.appearance().tintColor = UIColor.havenGreen
+        UINavigationBar.appearance().barTintColor = UIColor.havenBlack
         UINavigationBar.appearance().titleTextAttributes = [
-            NSAttributedStringKey.foregroundColor: UIColor.black,
+            NSAttributedStringKey.foregroundColor: UIColor.havenTextLightGrey,
             NSAttributedStringKey.font: UIFont.avenirNextMedium(size: 24)
         ]
     }

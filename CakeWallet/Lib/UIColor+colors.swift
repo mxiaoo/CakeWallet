@@ -44,4 +44,46 @@ extension UIColor {
     static var whiteSmoke: UIColor {
         return UIColor(hex: 0xF5F7F9)
     }
+    
+    // Haven
+    
+    static var havenBlack: UIColor {
+        return UIColor(hex: 0x1a1a1a)
+    }
+    
+    static var havenTrueBlack: UIColor {
+        return UIColor(hex: 0x000000)
+    }
+    
+    static var havenWhite: UIColor {
+        return UIColor(hex: 0xFFFFFF)
+    }
+    
+    static var havenLightGrey: UIColor {
+        return UIColor(hex: 0xf2f2f2)
+    }
+    
+    static var havenGrey: UIColor {
+        return UIColor(hex: 0x3c3c3c)
+    }
+    
+    static var havenGreen: UIColor {
+        return UIColor(hex: 0x45de9d)
+    }
+    
+    static var havenBlue: UIColor {
+        return UIColor(hex: 0x25a1fa)
+    }
+    
+    static var havenAttentionYellow: UIColor {
+        return UIColor(hex: 0xfddf89)
+    }
+    
+    static var havenTextLightGrey: UIColor {
+        return UIColor(hex: 0xd1d1d1)
+    }
+    
+    static var havenTextDarkGrey: UIColor {
+        return UIColor(hex: 0x8d8d8d)
+    }
 }

@@ -35,8 +35,8 @@ final class PinPasswordView: BaseView {
         stackView.alignment = .fill
         stackView.distribution = .equalSpacing
         descriptionLabel.textAlignment = .center
-        descriptionLabel.textColor = UIColor(hex: 0x303030) // FIX-ME: Unnamed constant
-        backgroundColor = .whiteSmoke
+        descriptionLabel.textColor = UIColor.havenTextLightGrey
+        backgroundColor = UIColor.havenBlack
         
         
 //        let startColor = UIColor(hex: 0xA682FF)
@@ -88,7 +88,7 @@ final class PinPasswordView: BaseView {
         let closeButton = UIButton(type: .custom)
         closeButton.titleLabel?.font = UIFont.fontAwesome(ofSize: 25)
         closeButton.setTitle(String.fontAwesomeIcon(name: .close), for: .normal)
-        closeButton.setTitleColor(.black, for: .normal)
+        closeButton.setTitleColor(UIColor.havenGreen, for: .normal)
         addSubview(closeButton)
         
         closeButton.snp.makeConstraints { make in

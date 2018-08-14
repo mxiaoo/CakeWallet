@@ -224,7 +224,7 @@ final class ExchangeView: BaseView {
     
     override func configureView() {
         super.configureView()
-        backgroundColor = .whiteSmoke
+        backgroundColor = .havenLightGrey
         scrollView.translatesAutoresizingMaskIntoConstraints = false
         contentView.translatesAutoresizingMaskIntoConstraints = false
         poweredByLabel.textAlignment = .center

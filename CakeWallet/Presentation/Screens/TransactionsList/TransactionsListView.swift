@@ -20,7 +20,7 @@ final class TransactionsListView: BaseView {
         super.configureView()
         tableView.sectionHeaderHeight = 50
         tableView.tableFooterView = UIView()
-        tableView.backgroundColor = .whiteSmoke
+        tableView.backgroundColor = .havenLightGrey
         tableView.separatorStyle = .none
         addSubview(tableView)
     }

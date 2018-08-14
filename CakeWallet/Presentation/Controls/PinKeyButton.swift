@@ -34,7 +34,7 @@ final class PinKeyButton: UIButton {
         showsTouchWhenHighlighted = false
         contentHorizontalAlignment = .center
         titleLabel?.font = UIFont.avenirNextMedium(size: 24)
-        setTitleColor(.lightGray, for: .normal)
-        backgroundColor = .white
+        setTitleColor(UIColor.havenTextDarkGrey, for: .normal)
+        backgroundColor = UIColor.havenLightGrey
     }
 }

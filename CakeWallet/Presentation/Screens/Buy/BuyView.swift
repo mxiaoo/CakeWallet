@@ -38,7 +38,7 @@ final class BuyView: BaseView {
     
     override func configureView() {
         super.configureView()
-        backgroundColor = .whiteSmoke
+        backgroundColor = .havenLightGrey
         poweredByLabel.textAlignment = .center
         poweredByLabel.textColor = .lightGray
         innerView.addSubview(codeTextField)

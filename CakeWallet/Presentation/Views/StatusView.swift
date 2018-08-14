@@ -36,7 +36,7 @@ final class StatusViewImpl: BaseView {
         backgroundColor = .clear
         descriptionLabel.textColor = .lightGray
         descriptionLabel.numberOfLines = 0
-        progressView.progressTintColor = .lightGreen
+        progressView.progressTintColor = .havenGreen
         progressView.trackTintColor = UIColor(hex: 0xd4d3da) // FIX-ME: Unnamed constant
         progressView.layer.masksToBounds = true
         progressView.layer.cornerRadius = 1

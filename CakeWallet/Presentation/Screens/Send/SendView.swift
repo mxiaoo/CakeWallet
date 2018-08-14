@@ -59,7 +59,7 @@ final class SendView: BaseView {
         addSubview(sendButton)
         addSubview(innerView)
         
-        backgroundColor = .whiteSmoke
+        backgroundColor = .havenLightGrey
         feePriorityDescriptionLabel.numberOfLines = 0
         feePriorityDescriptionLabel.textColor = .gray
         estimatedTitleLabel.text = "Estimated fee:"

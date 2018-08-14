@@ -20,7 +20,7 @@ final class IconView: UIView {
         
         self.init(iconImage: UIImage.fontAwesomeIcon(
             name: fontAwesomeIcon,
-            textColor: .whiteSmoke,
+            textColor: .havenLightGrey,
             size: IconView.defaultImageSize))
     }
     

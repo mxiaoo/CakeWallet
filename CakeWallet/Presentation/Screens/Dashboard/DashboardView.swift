@@ -41,11 +41,11 @@ final class DashboardView: BaseView {
         tableViewHeader.addSubview(innerTableViewHeader)
         innerTableViewHeader.layer.masksToBounds = true
         innerTableViewHeader.layer.cornerRadius = 10
-        innerTableViewHeader.backgroundColor = .white
+        innerTableViewHeader.backgroundColor = UIColor.havenWhite
         innerTableViewHeader.addSubview(statusViewContainer)
         innerTableViewHeader.addSubview(balanceViewContainer)
         tableView.tableFooterView = UIView()
-        tableView.backgroundColor = .whiteSmoke
+        tableView.backgroundColor = UIColor.havenLightGrey
         tableView.separatorStyle = .none
         tableView.tableHeaderView = tableViewHeader
         tableView.sectionHeaderHeight = 50

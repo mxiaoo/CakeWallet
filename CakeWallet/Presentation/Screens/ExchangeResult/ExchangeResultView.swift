@@ -44,7 +44,7 @@ final class ExchangeResultView: BaseView {
     
     override func configureView() {
         super.configureView()
-        backgroundColor = .whiteSmoke
+        backgroundColor = .havenLightGrey
         depositAddressLabel.numberOfLines = 0
         preConfirmDescriptionLabel.numberOfLines = 0
         preConfirmDescriptionLabel.textColor = .lightGray

@@ -23,7 +23,7 @@ final class SettingsView: BaseView {
         footerLabel.font = .avenirNextMedium(size: 15)
         table.tableFooterView = footerLabel
         table.backgroundColor = .clear
-        backgroundColor = .whiteSmoke
+        backgroundColor = .havenLightGrey
         addSubview(table)
     }
     
