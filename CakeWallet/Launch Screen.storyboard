@@ -16,18 +16,7 @@
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="haven-logo" translatesAutoresizingMaskIntoConstraints="NO" id="uDh-5Z-Zit">
-                                <rect key="frame" x="40" y="109" width="240" height="128"/>
-                            </imageView>
-                        </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="uDh-5Z-Zit" firstAttribute="top" secondItem="Bcu-3y-fUS" secondAttribute="top" constant="89" id="5Wf-lk-CLe"/>
-                            <constraint firstItem="Bcu-3y-fUS" firstAttribute="bottom" secondItem="uDh-5Z-Zit" secondAttribute="bottom" constant="243" id="XOL-G9-Zsc"/>
-                            <constraint firstItem="Bcu-3y-fUS" firstAttribute="trailing" secondItem="uDh-5Z-Zit" secondAttribute="trailing" constant="40" id="be0-aG-SeO"/>
-                            <constraint firstItem="uDh-5Z-Zit" firstAttribute="leading" secondItem="Bcu-3y-fUS" secondAttribute="leading" constant="40" id="gdy-Lj-ijG"/>
-                        </constraints>
+                        <color key="backgroundColor" red="0.10196078431372549" green="0.10196078431372549" blue="0.10196078431372549" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="Bcu-3y-fUS"/>
                     </view>
                 </viewController>
@@ -36,7 +25,4 @@
             <point key="canvasLocation" x="52.5" y="375"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="haven-logo" width="426" height="536"/>
-    </resources>
 </document>
