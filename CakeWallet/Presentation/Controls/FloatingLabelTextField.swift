@@ -27,6 +27,8 @@ final class FloatingLabelTextField: SkyFloatingLabelTextField {
     
     override func configureView() {
         super.configureView()
+        selectedTitleColor = UIColor.havenLightGrey
+        selectedLineColor = UIColor.havenLightGrey
         font = .avenirNextMedium(size: 15)
     }
 }

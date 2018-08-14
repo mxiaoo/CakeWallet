@@ -43,6 +43,12 @@ final class WelcomeView: BaseView {
         addSubview(welcomeLabel)
         addSubview(descriptionTextView)
         addSubview(startButton)
+        
+        welcomeLabel.textColor = UIColor.havenTextLightGrey
+        welcomeSubtitleLabel.textColor = UIColor.havenTextLightGrey
+        descriptionTextView.textColor = UIColor.havenTextLightGrey
+        descriptionTextView.backgroundColor = UIColor.havenBlack
+        backgroundColor = UIColor.havenBlack
     }
     
     override func configureConstraints() {

@@ -26,6 +26,9 @@ final class RecoveryWalletOptionsView: BaseView {
         addSubview(seedButton)
         addSubview(keysButton)
         addSubview(orLabel)
+        
+        backgroundColor = UIColor.havenBlack
+        orLabel.textColor = UIColor.havenTextLightGrey
     }
     
     override func configureConstraints() {

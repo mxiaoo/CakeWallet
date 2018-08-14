@@ -32,7 +32,7 @@ final class RecoveryView: BaseView {
         placeholderLabel.text = "Enter seed"
         placeholderLabel.sizeToFit()
         seedTextView.addSubview(placeholderLabel)
-        placeholderLabel.textColor = .lightGray
+        placeholderLabel.textColor = UIColor.havenTextLightGrey
         placeholderLabel.isHidden = !seedTextView.text.isEmpty
         
         seedTextView.font = .avenirNextMedium(size: 15)

@@ -40,12 +40,12 @@ final class WelcomeViewController: BaseViewController<WelcomeView> {
             
             // FIX-ME: Unnamed constant
             
-            contentView.welcomeSubtitleLabel.text = "to \(appName),\nthe first iOS wallet for Monero."
+            contentView.welcomeSubtitleLabel.text = "to \(appName)"
         }
         
         // FIX-ME: Unnamed constant
         
-        contentView.descriptionTextView.text = "On the next screen you’ll be able to recover a wallet using your seed or private keys, or create a new wallet.\n\nPlease enjoy this wallet! We would love your feedback."
+        contentView.descriptionTextView.text = "On the next screen you’ll be able to recover a wallet using your seed or private keys, or create a new wallet.\n\nAlways backup your seed and private keys offline."
     }
     
     @objc

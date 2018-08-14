@@ -23,6 +23,9 @@ final class NewWalletView: BaseView {
         super.configureView()
         addSubview(walletNameTextField)
         addSubview(nextButton)
+        
+        walletNameTextField.textColor = UIColor.havenTextLightGrey
+        backgroundColor = UIColor.havenBlack
     }
     
     override func configureConstraints() {

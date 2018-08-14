@@ -26,13 +26,16 @@ final class AddWalletView: BaseView {
     override func configureView() {
         super.configureView()
         orLabel.text = "or"
-        recoveryDescriptionLabel.textColor = .lightGray
+        recoveryDescriptionLabel.textColor = UIColor.havenTextLightGrey
         recoveryDescriptionLabel.textAlignment = .center
         recoveryDescriptionLabel.numberOfLines = 0
         addSubview(newWalletButton)
         addSubview(recoveryWalletButton)
         addSubview(orLabel)
         addSubview(recoveryDescriptionLabel)
+        
+        orLabel.textColor = UIColor.havenLightGrey
+        backgroundColor = UIColor.havenBlack
     }
     
     override func configureConstraints() {
