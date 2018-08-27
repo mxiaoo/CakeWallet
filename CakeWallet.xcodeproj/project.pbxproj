@@ -159,6 +159,7 @@
 		0CFCAFE41FD5EFE7004EF698 /* WalletsSeedFetchable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CFCAFE31FD5EFE7004EF698 /* WalletsSeedFetchable.swift */; };
 		0CFCAFE61FD5F3A2004EF698 /* Wallets+WalletsSeedFetchable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CFCAFE51FD5F3A2004EF698 /* Wallets+WalletsSeedFetchable.swift */; };
 		7D688A03F774B0C06AB7D747 /* Pods_CakeWallet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CECAE07ED95A367F0CB6700 /* Pods_CakeWallet.framework */; };
+		8D14380F2134992E00E8A011 /* libboost.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D14380E2134992E00E8A011 /* libboost.a */; };
 		8DEA7306212209290054D3DF /* liblmdb.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DEA7305212209290054D3DF /* liblmdb.a */; };
 		CA032E2E2056C7DE009B24B9 /* ExchangeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA032E2D2056C7DE009B24B9 /* ExchangeView.swift */; };
 		CA032E302056F937009B24B9 /* ExchangeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA032E2F2056F937009B24B9 /* ExchangeTableViewCell.swift */; };
@@ -171,7 +172,6 @@
 		CA30F12D207698B90058C4CF /* NodesList.plist in Resources */ = {isa = PBXBuildFile; fileRef = CA30F12C207698B90058C4CF /* NodesList.plist */; };
 		CA3EA3F320669633005A7D5C /* UIScreen+sizeType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA3EA3F220669633005A7D5C /* UIScreen+sizeType.swift */; };
 		CA4830E0206ADD160071066A /* libminiupnpc.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CA4830DC206ADD160071066A /* libminiupnpc.a */; };
-		CA4830E6206AE52C0071066A /* libboost.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C056A6B2006637F0016AEF1 /* libboost.a */; };
 		CA4830E8206AF7050071066A /* TextViewUITableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA4830E7206AF7050071066A /* TextViewUITableViewCell.swift */; };
 		CA4DF8B12034C2E3002B0AB4 /* RecoveryWalletOptionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA4DF8B02034C2E3002B0AB4 /* RecoveryWalletOptionsView.swift */; };
 		CA4DF8B32034C305002B0AB4 /* RecoveryWalletOptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA4DF8B22034C305002B0AB4 /* RecoveryWalletOptionsViewController.swift */; };
@@ -224,7 +224,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0C056A6B2006637F0016AEF1 /* libboost.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libboost.a; path = External/ofxiOSBoost/libs/boost/ios/libboost.a; sourceTree = "<group>"; };
 		0C0A314D1F9F8D4B001B96BC /* WalletUITableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletUITableViewCell.swift; sourceTree = "<group>"; };
 		0C0F00451F8CC4BE002A595C /* MoneroTransferAdapter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MoneroTransferAdapter.h; sourceTree = "<group>"; };
 		0C0F00461F8CC521002A595C /* MoneroTransferAdapter.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = MoneroTransferAdapter.mm; sourceTree = "<group>"; };
@@ -399,6 +398,7 @@
 		1CECAE07ED95A367F0CB6700 /* Pods_CakeWallet.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CakeWallet.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3848B085667C2AC96BB45F12 /* Pods-CakeWallet.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CakeWallet.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CakeWallet/Pods-CakeWallet.debug.xcconfig"; sourceTree = "<group>"; };
 		561E69E83825EF25D7339410 /* Pods_Cryptonist.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Cryptonist.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8D14380E2134992E00E8A011 /* libboost.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libboost.a; path = External/ofxiOSBoost/libs/boost/ios/libboost.a; sourceTree = "<group>"; };
 		8DEA7305212209290054D3DF /* liblmdb.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = liblmdb.a; path = "External/monero-gui/monero/build/release/external/db_drivers/liblmdb/liblmdb.a"; sourceTree = "<group>"; };
 		CA032E2D2056C7DE009B24B9 /* ExchangeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeView.swift; sourceTree = "<group>"; };
 		CA032E2F2056F937009B24B9 /* ExchangeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeTableViewCell.swift; sourceTree = "<group>"; };
@@ -455,11 +455,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				8DEA7306212209290054D3DF /* liblmdb.a in Frameworks */,
+				8D14380F2134992E00E8A011 /* libboost.a in Frameworks */,
 				CABBD20E2070283A008AB5B5 /* libeasylogging.a in Frameworks */,
 				CABBD20F2070283A008AB5B5 /* libepee.a in Frameworks */,
 				CABBD2102070283A008AB5B5 /* libunbound.a in Frameworks */,
 				CABBD2112070283A008AB5B5 /* libwallet_merged.a in Frameworks */,
-				CA4830E6206AE52C0071066A /* libboost.a in Frameworks */,
 				CA4830E0206ADD160071066A /* libminiupnpc.a in Frameworks */,
 				0C17188B2003F34700EA1B02 /* libcrypto.a in Frameworks */,
 				0C17188C2003F34700EA1B02 /* libssl.a in Frameworks */,
@@ -1016,9 +1016,9 @@
 		7E8099D1BF3D5573A4A7316D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8D14380E2134992E00E8A011 /* libboost.a */,
 				8DEA7305212209290054D3DF /* liblmdb.a */,
 				CA4830DC206ADD160071066A /* libminiupnpc.a */,
-				0C056A6B2006637F0016AEF1 /* libboost.a */,
 				0C1718842003E91A00EA1B02 /* libeasylogging.a */,
 				0C1718852003E91A00EA1B02 /* libepee.a */,
 				0C1718832003E91A00EA1B02 /* libunbound.a */,
@@ -1249,6 +1249,8 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-CakeWallet/Pods-CakeWallet-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/BlueSocket/Socket.framework",
 				"${BUILT_PRODUCTS_DIR}/Dip/Dip.framework",
 				"${BUILT_PRODUCTS_DIR}/FontAwesome.swift/FontAwesome_swift.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
@@ -1265,6 +1267,8 @@
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Socket.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Dip.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FontAwesome_swift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
@@ -1689,6 +1693,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_INCLUDE_PATHS = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "CakeWallet/CakeWallet-Bridging-Header.h";
 				SWIFT_OBJC_INTERFACE_HEADER_NAME = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -1761,6 +1766,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_INCLUDE_PATHS = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "CakeWallet/CakeWallet-Bridging-Header.h";
 				SWIFT_OBJC_INTERFACE_HEADER_NAME = "";
 				SWIFT_VERSION = 4.0;

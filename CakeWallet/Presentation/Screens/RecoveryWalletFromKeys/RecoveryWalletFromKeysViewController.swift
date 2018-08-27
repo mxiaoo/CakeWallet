@@ -45,16 +45,22 @@ final class RecoveryWalletFromKeysViewController: BaseViewController<RecoveryWal
 //        contentView.restoreFromHeightView.datePicker.addTarget(self, action: #selector(onDateChange(_:)), for: .valueChanged)
     }
     
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        let height = contentView.safeHeight() > 550 ? contentView.safeHeight() : 550
+        contentView.scrollView.contentSize = CGSize(width: contentView.frame.width, height: height)
+    }
+    
 //    @objc
 //    private func onDateChange(_ datePicker: UIDatePicker) {
 //        let date = datePicker.date
-//
+//        
 //        getHeight(from: date)
 //            .then { [weak self] height -> Void in
 //                guard height != 0 else {
 //                    return
 //                }
-//
+//                
 //                self?.contentView.restoreFromHeightView.restoreHeightTextField.text = "\(height)"
 //            }.catch { error in
 //                print(error)
