@@ -33,7 +33,7 @@ final class PrimaryButton: UIButton {
     
     override func configureView() {
         backgroundColor = .havenGreen
-        setTitleColor(.white, for: .normal)
+        setTitleColor(.havenBlack, for: .normal)
 //        layer.masksToBounds = false
 //        layer.shadowRadius = 20
 //        layer.shadowOffset = CGSize(width: 2, height: 1)

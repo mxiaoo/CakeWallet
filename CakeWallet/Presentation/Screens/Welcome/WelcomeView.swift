@@ -55,7 +55,7 @@ final class WelcomeView: BaseView {
         welcomeLabel.snp.makeConstraints { make in
             make.leading.equalToSuperview().offset(15)
             make.trailing.equalToSuperview().offset(-15)
-            make.top.equalToSuperview().offset(50)
+            make.top.equalToSuperview().offset(100)
         }
         
         welcomeSubtitleLabel.snp.makeConstraints { make in

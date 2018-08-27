@@ -40,5 +40,8 @@ final class TextViewUITableViewCell: UITableViewCell {
     
     func configure(attributedText: NSAttributedString) {
         textView.attributedText = attributedText
+        textView.linkTextAttributes = [
+            NSAttributedStringKey.foregroundColor.rawValue: UIColor.havenGreen
+        ]
     }
 }
