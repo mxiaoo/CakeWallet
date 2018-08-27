@@ -50,12 +50,17 @@ final class PasswordKeyboardView: UIView {
             
             if i < numbersLastButtonPosition {
                 button.setTitle("\(i)", for: .normal)
+            } else if i == numbersLastButtonPosition {
+                button.layer.borderWidth = 0
+                button.isUserInteractionEnabled = false
             } else if i == zeroButtonPosition {
                 button.setTitle("0", for: .normal)
             } else if i == deleteButtonPosition {
                 button.titleLabel?.font = UIFont.fontAwesome(ofSize: keyFontSize)
                 button.setTitle(String.fontAwesomeIcon(name: .longArrowLeft), for: .normal)
+                button.titleLabel?.textColor = UIColor.havenGreen
                 button.tag = deleteButtonPosition
+                button.layer.borderWidth = 0
             }
             
             if i != numbersLastButtonPosition {

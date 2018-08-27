@@ -27,14 +27,16 @@ final class PinKeyButton: UIButton {
     override func layoutSubviews() {
         super.layoutSubviews()
         rounded()
-        addShadowView()
+//        addShadowView()
     }
     
     override func configureView() {
         showsTouchWhenHighlighted = false
         contentHorizontalAlignment = .center
         titleLabel?.font = UIFont.avenirNextMedium(size: 24)
-        setTitleColor(UIColor.havenTextDarkGrey, for: .normal)
-        backgroundColor = UIColor.havenLightGrey
+        setTitleColor(UIColor.havenLightGrey, for: .normal)
+        backgroundColor = UIColor.havenBlack
+        layer.borderWidth = 1
+        layer.borderColor = UIColor.havenLightGrey.cgColor
     }
 }
