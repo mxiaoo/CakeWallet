@@ -34,7 +34,7 @@ final class AddWalletViewController: BaseViewController<AddWalletView> {
         
         // FIX-ME: Unnamed constant
         
-        contentView.recoveryDescriptionLabel.text = "Monero wallet recovery is a slow process.\nThe recovery does not work in the background."
+        contentView.recoveryDescriptionLabel.text = "Haven wallet recovery is a slow process.\nThe recovery does not work in the background."
     }
    
     @objc

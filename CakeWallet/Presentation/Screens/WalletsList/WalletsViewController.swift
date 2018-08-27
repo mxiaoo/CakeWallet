@@ -61,7 +61,7 @@ final class WalletsViewController: BaseViewController<WalletsView>, UITableViewD
 
         if item.name == account.currentWalletName {
             cell.textLabel?.textColor = .white
-            cell.contentView.backgroundColor = .lightGreen
+            cell.contentView.backgroundColor = .havenGreen
             cell.selectionStyle = .none
         } else {
             cell.textLabel?.textColor = .black

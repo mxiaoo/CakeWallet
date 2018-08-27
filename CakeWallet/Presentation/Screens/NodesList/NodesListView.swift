@@ -17,6 +17,7 @@ final class NodesListView: BaseView {
     required init() {
         table = UITableView()
         autoReconnectSwitchView = UISwitch()
+        autoReconnectSwitchView.onTintColor = UIColor.havenGreen
         autoReconnectLabel = UILabel(font: .avenirNextMedium(size: 15))
         super.init()
     }

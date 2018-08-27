@@ -16,7 +16,7 @@ extension ConnectionSettings: CellItem {
             .then(on: DispatchQueue.main) { (canConnect, _) -> Void in
                 cell.statusImageView.image = UIImage.fontAwesomeIcon(
                     name: .circle,
-                    textColor: canConnect ? UIColor.green : UIColor.red,
+                    textColor: canConnect ? UIColor.havenGreen : UIColor.red,
                     size: CGSize(width: 16, height: 16))
             }.catch { _ in
                 cell.statusImageView.image = UIImage.fontAwesomeIcon(

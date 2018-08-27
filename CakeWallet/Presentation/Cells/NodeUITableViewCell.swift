@@ -34,7 +34,7 @@ final class NodeUITableViewCell: UITableViewCell {
     
     func setConnection(status: Bool) {
         if status {
-            statusImageView.image = UIImage.fontAwesomeIcon(name: .circle, textColor: .green, size: CGSize(width: 16, height: 16))
+            statusImageView.image = UIImage.fontAwesomeIcon(name: .circle, textColor: .havenGreen, size: CGSize(width: 16, height: 16))
         } else {
             statusImageView.image = UIImage.fontAwesomeIcon(name: .circle, textColor: .red, size: CGSize(width: 16, height: 16))
         }

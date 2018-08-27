@@ -22,7 +22,7 @@ final class SendView: BaseView {
     let innerView: CardView
     
     required init() {
-        addressTextField = FloatingLabelTextField(placeholder: "Monero address")
+        addressTextField = FloatingLabelTextField(placeholder: "Haven address")
         amountInMoneroTextField = FloatingLabelTextField(placeholder: "XHV: 0.0000", title: "XHV")
         amountInAnotherCuncurrencyTextField = FloatingLabelTextField(placeholder: "USD: 0.00", title: "USD (approximate)")
         paymenyIdTextField = FloatingLabelTextField(placeholder: "Payment ID (optional)", title: "Payment ID")
@@ -36,6 +36,7 @@ final class SendView: BaseView {
                 size: CGSize(width: 32, height: 32)))
         estimatedTitleLabel = UILabel(font: .avenirNextMedium(size: 15))
         estimatedValueLabel = UILabel(font: .avenirNextMedium(size: 15))
+        estimatedValueLabel.numberOfLines = 0
         feePriorityDescriptionLabel = UILabel(font: .avenirNextMedium(size: 12))
         allAmountButton = SecondaryButton(title: "All".uppercased())
         innerView = CardView()

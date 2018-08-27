@@ -34,11 +34,11 @@ final class PrimaryButton: UIButton {
     override func configureView() {
         backgroundColor = .havenGreen
         setTitleColor(.white, for: .normal)
-        layer.masksToBounds = false
-        layer.shadowRadius = 20
-        layer.shadowOffset = CGSize(width: 2, height: 1)
-        layer.shadowOpacity = 0.3
-        layer.shadowColor = UIColor.lightGray.cgColor
+//        layer.masksToBounds = false
+//        layer.shadowRadius = 20
+//        layer.shadowOffset = CGSize(width: 2, height: 1)
+//        layer.shadowOpacity = 0.3
+//        layer.shadowColor = UIColor.lightGray.cgColor
         titleEdgeInsets = UIEdgeInsets(top: 0, left: 15, bottom: 0, right: 15)
         contentHorizontalAlignment = .center
         titleLabel?.font = UIFont.avenirNextHeavy(size: 17)

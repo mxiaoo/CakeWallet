@@ -78,7 +78,7 @@ final class NodesListViewController: BaseViewController<NodesListView>, UITableV
         
         if item == currentNodeSettings {
             cell.textLabel?.textColor = .white
-            cell.backgroundColor = .lightGreen
+            cell.backgroundColor = .havenGreen
             cell.selectionStyle = .none
             cell.statusImageView.isHidden = true
         } else {
