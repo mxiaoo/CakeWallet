@@ -58,6 +58,7 @@ final class SettingsViewController: BaseViewController<SettingsView>, UITableVie
             self.action = action
             self.switchView = UISwitch()
             self.switchView.isOn = isOn
+            self.switchView.onTintColor = .havenGreen
             config()
         }
         
