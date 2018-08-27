@@ -7,7 +7,7 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleDisplayName</key>
-	<string>Cake wallet</string>
+	<string>Haven Wallet</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -24,34 +24,34 @@
 	<string>11</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
-    <key>NSAppTransportSecurity</key>
-    <dict>
-        <key>NSExceptionDomains</key>
-        <dict>
-            <key>chainradar.com</key>
-            <dict>
-                <key>NSIncludesSubdomains</key>
-                <false/>
-            </dict>
-            <key>fixer.io</key>
-            <dict>
-                <key>NSIncludesSubdomains</key>
-                <true/>
-            </dict>
-            <key>havenprotocol.com</key>
-            <dict>
-                <key>NSIncludesSubdomains</key>
-                <true/>
-                <key>NSTemporaryExceptionAllowsInsecureHTTPLoads</key>
-                <true/>
-            </dict>
-            <key>tradeogre.com</key>
-            <dict>
-                <key>NSIncludesSubdomains</key>
-                <false/>
-            </dict>
-        </dict>
-    </dict>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSExceptionDomains</key>
+		<dict>
+			<key>chainradar.com</key>
+			<dict>
+				<key>NSIncludesSubdomains</key>
+				<false/>
+			</dict>
+			<key>fixer.io</key>
+			<dict>
+				<key>NSIncludesSubdomains</key>
+				<true/>
+			</dict>
+			<key>havenprotocol.com</key>
+			<dict>
+				<key>NSIncludesSubdomains</key>
+				<true/>
+				<key>NSTemporaryExceptionAllowsInsecureHTTPLoads</key>
+				<true/>
+			</dict>
+			<key>tradeogre.com</key>
+			<dict>
+				<key>NSIncludesSubdomains</key>
+				<false/>
+			</dict>
+		</dict>
+	</dict>
 	<key>NSCameraUsageDescription</key>
 	<string>Used for scan QR code</string>
 	<key>UILaunchStoryboardName</key>
