@@ -20,8 +20,8 @@ private let walletCreatingQueue = DispatchQueue(
     qos: .default)
 
 final class MoneroWalletGateway: WalletGateway {
-    static let prefixPath = "/Monero/"
-    static let type: WalletType = .monero
+    static let prefixPath = "/Haven-Protocol/"
+    static let type: WalletType = .haven
     
     static func fetchWalletsList() -> Promise<[WalletDescription]> {
         return Promise { fulfill, reject in

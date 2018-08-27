@@ -11,6 +11,7 @@ import Foundation
 enum WalletType: Int {
     case bitcoin
     case monero
+    case haven
     case none
     
     func stringify() -> String {
@@ -19,6 +20,8 @@ enum WalletType: Int {
             return "Bitcoin"
         case .monero:
             return "Monero"
+        case .haven:
+            return "Haven Protocol"
         case .none:
             return "Invalid wallet type"
         }
