@@ -14,7 +14,7 @@ final class RecoveryWalletFromKeysView: BaseView {
     let viewKeyTextField: UITextField
     let spendKeyTextField: UITextField
     let watchOnlyDescriptionLabel: UILabel
-    let restoreFromHeightView: RestoreFromHeightView
+//    let restoreFromHeightView: RestoreFromHeightView
     let confirmButton: UIButton
     
     required init() {
@@ -24,7 +24,7 @@ final class RecoveryWalletFromKeysView: BaseView {
         spendKeyTextField = FloatingLabelTextField(placeholder: "Spend key (private)")
         confirmButton = PrimaryButton(title: "Recover")
         watchOnlyDescriptionLabel = UILabel(font: .avenirNextMedium(size: 14))
-        restoreFromHeightView = RestoreFromHeightView()
+//        restoreFromHeightView = RestoreFromHeightView()
         super.init()
     }
     
@@ -35,7 +35,7 @@ final class RecoveryWalletFromKeysView: BaseView {
         addSubview(publicKeyTextField)
         addSubview(viewKeyTextField)
         addSubview(spendKeyTextField)
-        addSubview(restoreFromHeightView)
+//        addSubview(restoreFromHeightView)
         addSubview(watchOnlyDescriptionLabel)
         addSubview(confirmButton)
     }
@@ -76,11 +76,11 @@ final class RecoveryWalletFromKeysView: BaseView {
             make.top.equalTo(viewKeyTextField.snp.bottom).offset(20)
         }
         
-        restoreFromHeightView.snp.makeConstraints { make in
-            make.leading.equalToSuperview().offset(20)
-            make.trailing.equalToSuperview().offset(-20)
-            make.top.equalTo(watchOnlyDescriptionLabel.snp.bottom).offset(5)
-        }
+//        restoreFromHeightView.snp.makeConstraints { make in
+//            make.leading.equalToSuperview().offset(20)
+//            make.trailing.equalToSuperview().offset(-20)
+//            make.top.equalTo(watchOnlyDescriptionLabel.snp.bottom).offset(5)
+//        }
         
         confirmButton.snp.makeConstraints { make in
             make.bottom.equalToSuperview().offset(-20)

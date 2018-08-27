@@ -22,10 +22,10 @@ final class RecoveryViewController: BaseViewController<RecoveryView> {
         return contentView.seedTextView.text
     }
     private weak var alert: UIAlertController?
-    private var restoreHeight: UInt64 {
-        let heightStr = contentView.restoreFromHeightView.restoreHeightTextField.text ?? ""
-        return UInt64(heightStr) ?? 0
-    }
+//    private var restoreHeight: UInt64 {
+//        let heightStr = contentView.restoreFromHeightView.restoreHeightTextField.text ?? ""
+//        return UInt64(heightStr) ?? 0
+//    }
     
     init(wallets: WalletsRecoverable) {
         self.wallets = wallets
@@ -35,24 +35,24 @@ final class RecoveryViewController: BaseViewController<RecoveryView> {
     override func configureBinds() {
         title = "Recover wallet"
         contentView.confirmButton.addTarget(self, action: #selector(confirm), for: .touchUpInside)
-        contentView.restoreFromHeightView.datePicker.addTarget(self, action: #selector(onDateChange(_:)), for: .valueChanged)
+//        contentView.restoreFromHeightView.datePicker.addTarget(self, action: #selector(onDateChange(_:)), for: .valueChanged)
     }
     
-    @objc
-    private func onDateChange(_ datePicker: UIDatePicker) {
-        let date = datePicker.date
-        
-        getHeight(from: date)
-            .then { [weak self] height -> Void in
-                guard height != 0 else {
-                    return
-                }
-                
-                self?.contentView.restoreFromHeightView.restoreHeightTextField.text = "\(height)"
-            }.catch { error in
-                print(error)
-        }
-    }
+//    @objc
+//    private func onDateChange(_ datePicker: UIDatePicker) {
+//        let date = datePicker.date
+//
+//        getHeight(from: date)
+//            .then { [weak self] height -> Void in
+//                guard height != 0 else {
+//                    return
+//                }
+//
+//                self?.contentView.restoreFromHeightView.restoreHeightTextField.text = "\(height)"
+//            }.catch { error in
+//                print(error)
+//        }
+//    }
     
     @objc
     private func confirm() {
@@ -64,7 +64,7 @@ final class RecoveryViewController: BaseViewController<RecoveryView> {
         alert = _alert
         present(_alert, animated: true)
         
-        wallets.recoveryWallet(withName: name, seed: seed, restoreHeight: restoreHeight)
+        wallets.recoveryWallet(withName: name, seed: seed, restoreHeight: 0)
             .then { [weak self ] _ in
                 self?.alert?.dismiss(animated: false) {
                     self?.onRecovered?()
