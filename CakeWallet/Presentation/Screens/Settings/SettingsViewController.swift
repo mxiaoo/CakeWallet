@@ -8,12 +8,13 @@
 
 import UIKit
 import FontAwesome_swift
+import SafariServices
 
 final class SettingsViewController: BaseViewController<SettingsView>, UITableViewDelegate, UITableViewDataSource {
     enum SettingsSections: Int {
 //        case donation, wallets, personal, advanced, contactUs
         
-        case wallets, personal, advanced, contactUs
+        case wallets, personal, advanced, contactUs, other
     }
     
     struct SettingsTextViewCellItem: CellItem {
@@ -257,6 +258,15 @@ final class SettingsViewController: BaseViewController<SettingsView>, UITableVie
         attributedString.addAttribute(.link, value: "https://twitter.com/\(twitter)", range: twitterAddressRange)
         
         sections[.contactUs] = [SettingsTextViewCellItem(attributedString: attributedString)]
+        
+        let prviacyPolicy = SettingsCellItem(
+            title: "Privacy policy",
+            action: { [weak self] in
+                let safariViewController = SFSafariViewController(url: URL(string: "https://havenwallet.com/#/ios-privacy-policy")!)
+                self?.present(safariViewController, animated: true)
+        })
+        
+        sections[.other] = [prviacyPolicy]
     }
     
     // MARK: UITableViewDataSource
@@ -335,6 +345,8 @@ final class SettingsViewController: BaseViewController<SettingsView>, UITableVie
             titleLabel.text = "Advanced"
         case .contactUs:
             titleLabel.text = "Contact us"
+        case .other:
+            titleLabel.text = "Other"
         }
         
         return view
