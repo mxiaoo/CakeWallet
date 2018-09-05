@@ -3,7 +3,7 @@
 //  CakeWallet
 //
 //  Created by Cake Technologies on 21.02.2018.
-//  Copyright © 2018 Cake Technologies. 
+//  Copyright © 2018 Cake Technologies.
 //
 
 import PromiseKit
@@ -16,44 +16,57 @@ enum HeightParseError: Error {
 func getHeight(from date: Date) -> Promise<UInt64> {
     return Promise { fulfill, reject in
         DispatchQueue.global(qos: .background).async {
-            let timestamp = Int(date.timeIntervalSince1970)
-            var url =  URLComponents(string: "https://chainradar.com/xmr/blocks")!
-            url.queryItems = [
-                URLQueryItem(name: "filter[timestamp_greater]", value: "\(timestamp)")
-            ]
-            var request = URLRequest(url: url.url!)
+            var request = URLRequest(url: URL(string: "https://explorer.havenprotocol.com/api/networkinfo")!)
             request.httpMethod = "GET"
             
             let connection = URLSession.shared.dataTask(with: request) { data, response, error in
                 do {
                     if let error = error {
-                        reject(error)
+                        print("[getHeight] \(error)")
+                        reject(HeightParseError.cannotParseResult)
                         return
                     }
                     
                     guard
                         let data = data,
-                        let html = String(data: data, encoding: String.Encoding.utf8),
-                        let doc: Document = try? SwiftSoup.parse(html)  else {
-                            reject(HeightParseError.cannotParseResult)
+                        let decoded = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any],
+                        let innerJSON = decoded["data"] as? [String: Any],
+                        let currentHeight = innerJSON["height"] as? Int else {
+                            print("[getHeight] \(String(describing: error))")
                             return
                     }
                     
-                    if
-                        let row: Element = try  doc.getElementById("blocks-tbody")!.children().first(),
-                        let heightStr = try row.children().first()?.text(),
-                        let height = UInt64(heightStr) {
-                        fulfill(height)
-                    } else {
-                        fulfill(0)
+                    let now = Date()
+                    let span = date.daysUntil(date: now)
+                    let blocksPerDay = 720
+                    let blockHeightAtDate = currentHeight - (blocksPerDay * span)
+                    
+                    if blockHeightAtDate < 0 {
+                        reject(HeightParseError.cannotParseResult)
+                        return
                     }
-                } catch {
-                    reject(error)
+                    
+                    fulfill(UInt64(blockHeightAtDate))
+                } catch let error {
+                    print("[getHeight] \(error)")
+                    reject(HeightParseError.cannotParseResult)
                 }
             }
             
             connection.resume()
         }
+    }
+}
+
+extension Date {
+    func daysUntil(date: Date) -> Int {
+        let calendar = NSCalendar.current
+        
+        let date1 = calendar.startOfDay(for: self)
+        let date2 = calendar.startOfDay(for: date)
+        
+        let components = calendar.dateComponents([.day], from: date1, to: date2)
+        return components.day ?? 0
     }
 }
 
@@ -91,7 +104,7 @@ func fetchRate(for currency: Currency, base: Currency) -> Promise<Double> {
             
             connection.resume()
         }
-
+        
     }
 }
 
@@ -100,7 +113,7 @@ enum Currency: Int {
     
     static var all: [Currency] {
         return [.btc]
-//        return [.aud, .bgn, .brl, .cad, .chf, .cny, .czk, .eur, .dkk, .gbp, .hkd, .hrk, .huf, .idr, .ils, .inr, .isk, .jpy, .krw, .mxn, .myr, .nok, .nzd, .php, .pln, .ron, .rub, .sek, .sgd, .thb, .`try`, .usd, .zar, .btc]
+        //        return [.aud, .bgn, .brl, .cad, .chf, .cny, .czk, .eur, .dkk, .gbp, .hkd, .hrk, .huf, .idr, .ils, .inr, .isk, .jpy, .krw, .mxn, .myr, .nok, .nzd, .php, .pln, .ron, .rub, .sek, .sgd, .thb, .`try`, .usd, .zar, .btc]
     }
     
     var symbol: String {
