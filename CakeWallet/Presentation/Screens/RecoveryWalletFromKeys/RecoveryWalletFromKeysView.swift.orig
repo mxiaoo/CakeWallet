@@ -26,24 +26,38 @@ final class RecoveryWalletFromKeysView: BaseView {
         spendKeyTextField = FloatingLabelTextField(placeholder: "Spend key (private)")
         confirmButton = PrimaryButton(title: "Recover")
         watchOnlyDescriptionLabel = UILabel(font: .avenirNextMedium(size: 14))
-        restoreFromHeightView = RestoreFromHeightView()
+<<<<<<< HEAD
+        //restoreFromHeightView = RestoreFromHeightView()
         scrollView = UIScrollView()
         contentView = UIView()
+=======
+        restoreFromHeightView = RestoreFromHeightView()
+>>>>>>> parent of b6d5054... Removed ability to restore wallet from specific block height
         super.init()
     }
     
     override func configureView() {
         super.configureView()
         watchOnlyDescriptionLabel.numberOfLines = 0
+<<<<<<< HEAD
         contentView.addSubview(nameTextField)
         contentView.addSubview(publicKeyTextField)
         contentView.addSubview(viewKeyTextField)
         contentView.addSubview(spendKeyTextField)
-        contentView.addSubview(restoreFromHeightView)
+        //contentView.addSubview(restoreFromHeightView)
         contentView.addSubview(watchOnlyDescriptionLabel)
         contentView.addSubview(confirmButton)
         scrollView.addSubview(contentView)
         addSubview(scrollView)
+=======
+        addSubview(nameTextField)
+        addSubview(publicKeyTextField)
+        addSubview(viewKeyTextField)
+        addSubview(spendKeyTextField)
+        addSubview(restoreFromHeightView)
+        addSubview(watchOnlyDescriptionLabel)
+        addSubview(confirmButton)
+>>>>>>> parent of b6d5054... Removed ability to restore wallet from specific block height
     }
     
     override func configureConstraints() {

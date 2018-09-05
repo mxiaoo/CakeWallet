@@ -28,10 +28,10 @@ final class RecoveryWalletFromKeysViewController: BaseViewController<RecoveryWal
         return contentView.spendKeyTextField.text ?? ""
     }
     private weak var alert: UIAlertController?
-//    private var restoreHeight: UInt64 {
-//        let heightStr = contentView.restoreFromHeightView.restoreHeightTextField.text ?? ""
-//        return UInt64(heightStr) ?? 0
-//    }
+    private var restoreHeight: UInt64 {
+        let heightStr = contentView.restoreFromHeightView.restoreHeightTextField.text ?? ""
+        return UInt64(heightStr) ?? 0
+    }
     
     init(wallets: WalletsRecoverable) {
         self.wallets = wallets
@@ -42,7 +42,7 @@ final class RecoveryWalletFromKeysViewController: BaseViewController<RecoveryWal
         title = "Recover wallet"
         contentView.confirmButton.addTarget(self, action: #selector(confirm), for: .touchUpInside)
         contentView.watchOnlyDescriptionLabel.text = "* Leave this blank for a watch only wallet."
-//        contentView.restoreFromHeightView.datePicker.addTarget(self, action: #selector(onDateChange(_:)), for: .valueChanged)
+        contentView.restoreFromHeightView.datePicker.addTarget(self, action: #selector(onDateChange(_:)), for: .valueChanged)
     }
     
     override func viewDidLayoutSubviews() {
@@ -51,21 +51,21 @@ final class RecoveryWalletFromKeysViewController: BaseViewController<RecoveryWal
         contentView.scrollView.contentSize = CGSize(width: contentView.frame.width, height: height)
     }
     
-//    @objc
-//    private func onDateChange(_ datePicker: UIDatePicker) {
-//        let date = datePicker.date
-//        
-//        getHeight(from: date)
-//            .then { [weak self] height -> Void in
-//                guard height != 0 else {
-//                    return
-//                }
-//                
-//                self?.contentView.restoreFromHeightView.restoreHeightTextField.text = "\(height)"
-//            }.catch { error in
-//                print(error)
-//        }
-//    }
+    @objc
+    private func onDateChange(_ datePicker: UIDatePicker) {
+        let date = datePicker.date
+        
+        getHeight(from: date)
+            .then { [weak self] height -> Void in
+                guard height != 0 else {
+                    return
+                }
+                
+                self?.contentView.restoreFromHeightView.restoreHeightTextField.text = "\(height)"
+            }.catch { error in
+                print(error)
+        }
+    }
     
     @objc
     private func confirm() {
@@ -77,7 +77,7 @@ final class RecoveryWalletFromKeysViewController: BaseViewController<RecoveryWal
         alert = _alert
         present(_alert, animated: true)
         
-        wallets.recoveryWallet(withName: name, publicKey: publicKey, viewKey: viewKey, spendKey: spendKey, restoreHeight: 0)
+        wallets.recoveryWallet(withName: name, publicKey: publicKey, viewKey: viewKey, spendKey: spendKey, restoreHeight: restoreHeight)
             .then { [weak self ] _ in
                 self?.alert?.dismiss(animated: false) {
                     self?.onRecovered?()

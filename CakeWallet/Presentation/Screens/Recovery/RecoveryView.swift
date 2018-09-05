@@ -14,14 +14,14 @@ final class RecoveryView: BaseView {
     let seedTextView: UITextView
     let confirmButton: UIButton
     let placeholderLabel : UILabel
-//    let restoreFromHeightView: RestoreFromHeightView
+    let restoreFromHeightView: RestoreFromHeightView
     
     required init() {
-        walletNameTextField = FloatingLabelTextField(placeholder: "Enter wallet name", title: "Wallet name")
+        walletNameTextField = FloatingLabelTextField(placeholder: "Enter wallets name", title: "Wallet name")
         seedTextView = UITextView()
         confirmButton = PrimaryButton(title: "Recover")
         placeholderLabel = UILabel()
-//        restoreFromHeightView = RestoreFromHeightView()
+        restoreFromHeightView = RestoreFromHeightView()
         super.init()
     }
     
@@ -43,7 +43,7 @@ final class RecoveryView: BaseView {
         addSubview(walletNameTextField)
         addSubview(seedTextView)
         addSubview(confirmButton)
-//        addSubview(restoreFromHeightView)
+        addSubview(restoreFromHeightView)
     }
     
     override func configureConstraints() {
@@ -61,14 +61,14 @@ final class RecoveryView: BaseView {
             make.height.equalTo(150)
         }
         
-//        restoreFromHeightView.snp.makeConstraints { make in
-//            make.bottom.equalTo(seedTextView.snp.top).offset(-20)
-//            make.width.equalTo(seedTextView.snp.width)
-//            make.leading.equalToSuperview().offset(20)
-//        }
+        restoreFromHeightView.snp.makeConstraints { make in
+            make.bottom.equalTo(seedTextView.snp.top).offset(-20)
+            make.width.equalTo(seedTextView.snp.width)
+            make.leading.equalToSuperview().offset(20)
+        }
         
         walletNameTextField.snp.makeConstraints { make in
-            make.bottom.equalTo(seedTextView.snp.top).offset(-20)
+            make.bottom.equalTo(restoreFromHeightView.snp.top).offset(-20)
             make.leading.equalTo(seedTextView.snp.leading)
             make.trailing.equalTo(seedTextView.snp.trailing)
         }

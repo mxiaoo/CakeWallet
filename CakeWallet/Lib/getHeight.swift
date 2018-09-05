@@ -15,46 +15,45 @@ enum HeightParseError: Error {
 
 func getHeight(from date: Date) -> Promise<UInt64> {
     return Promise { fulfill, reject in
-        reject(AccountError.currentWalletIsNotSetup)
-//        DispatchQueue.global(qos: .background).async {
-//            let timestamp = Int(date.timeIntervalSince1970)
-//            var url =  URLComponents(string: "https://chainradar.com/xmr/blocks")!
-//            url.queryItems = [
-//                URLQueryItem(name: "filter[timestamp_greater]", value: "\(timestamp)")
-//            ]
-//            var request = URLRequest(url: url.url!)
-//            request.httpMethod = "GET"
-//
-//            let connection = URLSession.shared.dataTask(with: request) { data, response, error in
-//                do {
-//                    if let error = error {
-//                        reject(error)
-//                        return
-//                    }
-//
-//                    guard
-//                        let data = data,
-//                        let html = String(data: data, encoding: String.Encoding.utf8),
-//                        let doc: Document = try? SwiftSoup.parse(html)  else {
-//                            reject(HeightParseError.cannotParseResult)
-//                            return
-//                    }
-//
-//                    if
-//                        let row: Element = try  doc.getElementById("blocks-tbody")!.children().first(),
-//                        let heightStr = try row.children().first()?.text(),
-//                        let height = UInt64(heightStr) {
-//                        fulfill(height)
-//                    } else {
-//                        fulfill(0)
-//                    }
-//                } catch {
-//                    reject(error)
-//                }
-//            }
-//
-//            connection.resume()
-//        }
+        DispatchQueue.global(qos: .background).async {
+            let timestamp = Int(date.timeIntervalSince1970)
+            var url =  URLComponents(string: "https://chainradar.com/xmr/blocks")!
+            url.queryItems = [
+                URLQueryItem(name: "filter[timestamp_greater]", value: "\(timestamp)")
+            ]
+            var request = URLRequest(url: url.url!)
+            request.httpMethod = "GET"
+            
+            let connection = URLSession.shared.dataTask(with: request) { data, response, error in
+                do {
+                    if let error = error {
+                        reject(error)
+                        return
+                    }
+                    
+                    guard
+                        let data = data,
+                        let html = String(data: data, encoding: String.Encoding.utf8),
+                        let doc: Document = try? SwiftSoup.parse(html)  else {
+                            reject(HeightParseError.cannotParseResult)
+                            return
+                    }
+                    
+                    if
+                        let row: Element = try  doc.getElementById("blocks-tbody")!.children().first(),
+                        let heightStr = try row.children().first()?.text(),
+                        let height = UInt64(heightStr) {
+                        fulfill(height)
+                    } else {
+                        fulfill(0)
+                    }
+                } catch {
+                    reject(error)
+                }
+            }
+            
+            connection.resume()
+        }
     }
 }
 

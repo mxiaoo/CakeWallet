@@ -1,27 +1,31 @@
 //
-//  RecoveryWalletViewController.swift
-//  Wallet
+//  RecoveryWalletFromKeysViewController.swift
+//  CakeWallet
 //
-//  Created by Cake Technologies 15.10.17.
-//  Copyright © 2017 Cake Technologies. 
+//  Created by Cake Technologies on 14.02.2018.
+//  Copyright © 2018 Cake Technologies. 
 //
 
 import UIKit
-import PromiseKit
-import FontAwesome_swift
 
-final class RecoveryViewController: BaseViewController<RecoveryView> {
+final class RecoveryWalletFromKeysViewController: BaseViewController<RecoveryWalletFromKeysView> {
     
     // MARK: Property injections
-    var onPrepareRecovery: (() -> Promise<Void>)?
+    
     var onRecovered: VoidEmptyHandler
     
     private let wallets: WalletsRecoverable
     private var name: String {
-        return contentView.walletNameTextField.text ?? ""
+        return contentView.nameTextField.text ?? ""
     }
-    private var seed: String {
-        return contentView.seedTextView.text
+    private var publicKey: String {
+        return contentView.publicKeyTextField.text ?? ""
+    }
+    private var viewKey: String {
+        return contentView.viewKeyTextField.text ?? ""
+    }
+    private var spendKey: String {
+        return contentView.spendKeyTextField.text ?? ""
     }
     private weak var alert: UIAlertController?
     private var restoreHeight: UInt64 {
@@ -29,39 +33,41 @@ final class RecoveryViewController: BaseViewController<RecoveryView> {
         return UInt64(heightStr) ?? 0
     }
     
-    init(wallets: WalletsRecoverable, name: String = "", seed: String = "") {
+    init(wallets: WalletsRecoverable) {
         self.wallets = wallets
         super.init()
-        
-        if !seed.isEmpty {
-            contentView.seedTextView.text = seed
-            contentView.placeholderLabel.isHidden = true
-        }
-        
-        contentView.walletNameTextField.text = name
     }
     
     override func configureBinds() {
         title = "Recover wallet"
         contentView.confirmButton.addTarget(self, action: #selector(confirm), for: .touchUpInside)
+        contentView.watchOnlyDescriptionLabel.text = "* Leave this blank for a watch only wallet."
         contentView.restoreFromHeightView.datePicker.addTarget(self, action: #selector(onDateChange(_:)), for: .valueChanged)
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        if
-            let isModal = navigationController?.isModal,
-            isModal && navigationController?.viewControllers.first == self {
-            let closeButton = UIBarButtonItem.init(
-                image: UIImage.fontAwesomeIcon(name: .close, textColor: .black, size: CGSize(width: 24, height: 24)),
-                style: .plain,
-                target: self,
-                action: #selector(close))
-            navigationItem.leftBarButtonItem = closeButton
-        }
+<<<<<<< HEAD
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        let height = contentView.safeHeight() > 550 ? contentView.safeHeight() : 550
+        contentView.scrollView.contentSize = CGSize(width: contentView.frame.width, height: height)
     }
     
+//    @objc
+//    private func onDateChange(_ datePicker: UIDatePicker) {
+//        let date = datePicker.date
+//        
+//        getHeight(from: date)
+//            .then { [weak self] height -> Void in
+//                guard height != 0 else {
+//                    return
+//                }
+//                
+//                self?.contentView.restoreFromHeightView.restoreHeightTextField.text = "\(height)"
+//            }.catch { error in
+//                print(error)
+//        }
+//    }
+=======
     @objc
     private func onDateChange(_ datePicker: UIDatePicker) {
         let date = datePicker.date
@@ -77,6 +83,7 @@ final class RecoveryViewController: BaseViewController<RecoveryView> {
                 print(error)
         }
     }
+>>>>>>> parent of b6d5054... Removed ability to restore wallet from specific block height
     
     @objc
     private func confirm() {
@@ -88,14 +95,8 @@ final class RecoveryViewController: BaseViewController<RecoveryView> {
         alert = _alert
         present(_alert, animated: true)
         
-        (onPrepareRecovery?() ?? Promise(value: ()))
-            .then { [weak self] _ -> Promise<String> in
-                guard let this = self else {
-                    return Promise(value: "")
-                }
-                
-                return this.wallets.recoveryWallet(withName: this.name, seed: this.seed, restoreHeight: this.restoreHeight)
-            }.then { [weak self ] _ in
+        wallets.recoveryWallet(withName: name, publicKey: publicKey, viewKey: viewKey, spendKey: spendKey, restoreHeight: restoreHeight)
+            .then { [weak self ] _ in
                 self?.alert?.dismiss(animated: false) {
                     self?.onRecovered?()
                 }
@@ -106,12 +107,7 @@ final class RecoveryViewController: BaseViewController<RecoveryView> {
         }
     }
     
-    @objc
-    private func close() {
-        dismiss(animated: true)
-    }
-    
     private func isValidForm() -> Bool {
-        return !name.isEmpty && !seed.isEmpty
+        return !name.isEmpty && !publicKey.isEmpty && !viewKey.isEmpty
     }
 }

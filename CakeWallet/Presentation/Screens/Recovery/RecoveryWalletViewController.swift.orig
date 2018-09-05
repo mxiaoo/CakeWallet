@@ -47,9 +47,10 @@ final class RecoveryViewController: BaseViewController<RecoveryView> {
         contentView.restoreFromHeightView.datePicker.addTarget(self, action: #selector(onDateChange(_:)), for: .valueChanged)
     }
     
+<<<<<<< HEAD
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+
         if
             let isModal = navigationController?.isModal,
             isModal && navigationController?.viewControllers.first == self {
@@ -62,6 +63,22 @@ final class RecoveryViewController: BaseViewController<RecoveryView> {
         }
     }
     
+//    @objc
+//    private func onDateChange(_ datePicker: UIDatePicker) {
+//        let date = datePicker.date
+//        
+//        getHeight(from: date)
+//            .then { [weak self] height -> Void in
+//                guard height != 0 else {
+//                    return
+//                }
+//                
+//                self?.contentView.restoreFromHeightView.restoreHeightTextField.text = "\(height)"
+//            }.catch { error in
+//                print(error)
+//        }
+//    }
+=======
     @objc
     private func onDateChange(_ datePicker: UIDatePicker) {
         let date = datePicker.date
@@ -77,6 +94,7 @@ final class RecoveryViewController: BaseViewController<RecoveryView> {
                 print(error)
         }
     }
+>>>>>>> parent of b6d5054... Removed ability to restore wallet from specific block height
     
     @objc
     private func confirm() {
@@ -88,14 +106,19 @@ final class RecoveryViewController: BaseViewController<RecoveryView> {
         alert = _alert
         present(_alert, animated: true)
         
+<<<<<<< HEAD
         (onPrepareRecovery?() ?? Promise(value: ()))
             .then { [weak self] _ -> Promise<String> in
                 guard let this = self else {
                     return Promise(value: "")
                 }
                 
-                return this.wallets.recoveryWallet(withName: this.name, seed: this.seed, restoreHeight: this.restoreHeight)
+                return this.wallets.recoveryWallet(withName: this.name, seed: this.seed, restoreHeight: 0)
             }.then { [weak self ] _ in
+=======
+        wallets.recoveryWallet(withName: name, seed: seed, restoreHeight: restoreHeight)
+            .then { [weak self ] _ in
+>>>>>>> parent of b6d5054... Removed ability to restore wallet from specific block height
                 self?.alert?.dismiss(animated: false) {
                     self?.onRecovered?()
                 }
