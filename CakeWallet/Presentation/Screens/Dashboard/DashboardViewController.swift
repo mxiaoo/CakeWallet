@@ -42,7 +42,7 @@ final class DashboardViewController: BaseViewController<DashboardView>,
     
     override func configureDescription() {
         title = "Dashboard"
-        tabBarItem.image = UIImage(named: "monero-logo-335.png")?.resized(to: CGSize(width: 32, height: 32))
+        tabBarItem.image = UIImage(named: "haven-logo")?.resized(to: CGSize(width: 32, height: 32))
         tabBarItem.title = "Dashboard"
     }
     
