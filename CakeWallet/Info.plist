@@ -26,11 +26,6 @@
 	<dict>
 		<key>NSExceptionDomains</key>
 		<dict>
-			<key>havenwallet.com</key>
-			<dict>
-				<key>NSIncludesSubdomains</key>
-				<false/>
-			</dict>
 			<key>chainradar.com</key>
 			<dict>
 				<key>NSIncludesSubdomains</key>
@@ -47,6 +42,11 @@
 				<true/>
 				<key>NSTemporaryExceptionAllowsInsecureHTTPLoads</key>
 				<true/>
+			</dict>
+			<key>havenwallet.com</key>
+			<dict>
+				<key>NSIncludesSubdomains</key>
+				<false/>
 			</dict>
 			<key>tradeogre.com</key>
 			<dict>
