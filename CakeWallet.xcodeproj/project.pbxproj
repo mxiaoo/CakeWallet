@@ -1689,7 +1689,7 @@
 					"$(PROJECT_DIR)/External/monero-gui/monero/lib-armv8-a",
 					"$(PROJECT_DIR)/External/ofxiOSBoost/libs/boost/ios",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.havenprotocol.cakewallet;
+				PRODUCT_BUNDLE_IDENTIFIER = com.havenprotocol.wallet;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1762,7 +1762,7 @@
 					"$(PROJECT_DIR)/External/monero-gui/monero/lib-armv8-a",
 					"$(PROJECT_DIR)/External/ofxiOSBoost/libs/boost/ios",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.havenprotocol.cakewallet;
+				PRODUCT_BUNDLE_IDENTIFIER = com.havenprotocol.wallet;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
