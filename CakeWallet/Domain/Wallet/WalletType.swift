@@ -19,7 +19,7 @@ enum WalletType: Int {
         case .bitcoin:
             return "Bitcoin"
         case .monero:
-            return "Haven Protocol"
+            return "Monero"
         case .haven:
             return "Haven Protocol"
         case .none:

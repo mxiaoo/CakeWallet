@@ -14,6 +14,6 @@ struct WalletIndex {
     
     init(name: String) {
         self.name = name
-        type = .monero
+        type = .haven
     }
 }
