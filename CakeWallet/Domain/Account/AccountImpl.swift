@@ -42,10 +42,10 @@ final class AccountImpl: Account {
     var transactionPriority: TransactionPriority {
         get {
             if UserDefaults.standard.value(forKey: Configurations.DefaultsKeys.transactionPriority.stringify()) == nil {
-                return .slow
+                return .default
             }
             
-            return TransactionPriority(rawValue: UInt64(UserDefaults.standard.integer(forKey: Configurations.DefaultsKeys.transactionPriority))) ?? .slow
+            return TransactionPriority(rawValue: UInt64(UserDefaults.standard.integer(forKey: Configurations.DefaultsKeys.transactionPriority))) ?? .default
         }
         
         set {
