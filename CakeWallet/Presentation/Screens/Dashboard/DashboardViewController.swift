@@ -171,11 +171,14 @@ final class DashboardViewController: BaseViewController<DashboardView>,
             if !iconView.isRoutating {
                 iconView.rotate()
             }
+            UIApplication.shared.isIdleTimerDisabled = true
         case .failedConnection(_), .failedConnectionNext, .notConnected:
             contentView.statusViewContainer.iconView.pulsate()
             contentView.statusViewContainer.iconView.stopRotate()
+            UIApplication.shared.isIdleTimerDisabled = false
         default:
             iconView.stopRotate()
+            UIApplication.shared.isIdleTimerDisabled = false
         }
     }
     
