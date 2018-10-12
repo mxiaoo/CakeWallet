@@ -19,13 +19,18 @@
 	<key>CFBundleShortVersionString</key>
 	<string>1.0</string>
 	<key>CFBundleVersion</key>
-	<string>1</string>
+	<string>2</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSAppTransportSecurity</key>
 	<dict>
 		<key>NSExceptionDomains</key>
 		<dict>
+			<key>bittrex.com</key>
+			<dict>
+				<key>NSIncludesSubdomains</key>
+				<false/>
+			</dict>
 			<key>chainradar.com</key>
 			<dict>
 				<key>NSIncludesSubdomains</key>
@@ -53,11 +58,6 @@
 				<key>NSIncludesSubdomains</key>
 				<false/>
 			</dict>
-            <key>bittrex.com</key>
-            <dict>
-                <key>NSIncludesSubdomains</key>
-                <false/>
-            </dict>
 		</dict>
 	</dict>
 	<key>NSCameraUsageDescription</key>
