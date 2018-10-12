@@ -17,7 +17,7 @@ final class MoneroRateTicker: RateTicker {
     private var rateRaw: Double = 0
     private var listeners = [RateListener]()
     private let account: CurrencySettingsConfigurable
-    private let url = URL(string: "https://tradeogre.com/api/v1/ticker/BTC-XHV")!
+    private let url = URL(string: "https://bittrex.com/api/v1.1/public/getticker?market=BTC-XHV")!
     
     init(account: CurrencySettingsConfigurable) {
         self.account = account
@@ -45,8 +45,8 @@ final class MoneroRateTicker: RateTicker {
                     guard
                         let data = data,
                         let decoded = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any],
-                        let priceString = decoded["price"] as? String,
-                        let price = Double(priceString) else {
+                        let resultDict = decoded["result"] as? [String: Any],
+                        let price = resultDict["Last"] as? Double else {
                             print("[MoneroRateTicker] [connect] \(String(describing: error))")
                             return
                     }

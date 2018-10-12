@@ -53,6 +53,11 @@
 				<key>NSIncludesSubdomains</key>
 				<false/>
 			</dict>
+            <key>bittrex.com</key>
+            <dict>
+                <key>NSIncludesSubdomains</key>
+                <false/>
+            </dict>
 		</dict>
 	</dict>
 	<key>NSCameraUsageDescription</key>
