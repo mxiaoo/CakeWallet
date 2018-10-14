@@ -129,7 +129,7 @@ final class SettingsViewController: BaseViewController<SettingsView>, UITableVie
     }
     
     override func configureDescription() {
-        title = "Settings"
+        title = localize("SETTINGS_SCREEN_NAV_TITLE")
         updateTabBarIcon(name: .cog)
     }
 
@@ -145,18 +145,18 @@ final class SettingsViewController: BaseViewController<SettingsView>, UITableVie
         if
             let dictionary = Bundle.main.infoDictionary,
             let version = dictionary["CFBundleShortVersionString"] as? String {
-            contentView.footerLabel.text = "Version \(version)"
+            contentView.footerLabel.text = localize("SETTINGS_SCREEN_VERSION", version)
         }
         
         let biometricAuthSwitcher = SettingsSwitchCellItem(
-            title: "Allow biometric authentication",
+            title: localize("SETTINGS_SCREEN_BIOMETRIC_AUTHENTICATON_TITLE"),
             isOn: accountSettings.isBiometricalAuthAllow,
             action: { [weak self] isOn in
                 self?.accountSettings.isBiometricalAuthAllow = isOn
         })
         
         let rememberPasswordSwitcher = SettingsSwitchCellItem(
-            title: "Remember pin",
+            title: localize("SETTINGS_SCREEN_REMEMBER_PIN_TITLE"),
             isOn: accountSettings.isPasswordRemembered) { [weak self] isOn in
                 self?.accountSettings.isPasswordRemembered = isOn
         }
@@ -164,26 +164,26 @@ final class SettingsViewController: BaseViewController<SettingsView>, UITableVie
         let options: [TransactionPriority] = [.slow, .default, .fast, .fastest]
         
         let feePriorityPicker = SettingsPickerCellItem<TransactionPriority>(
-            title: "Fee priority",
+            title: localize("SETTINGS_SCREEN_FEE_PRIORITY_TITLE"),
             pickerOptions: options,
             selectedAtIndex: options.index(of: accountSettings.transactionPriority) ?? 0) { [weak self] pickedItem in
                 self?.accountSettings.transactionPriority = pickedItem
         }
         
         let changePin = SettingsCellItem(
-            title: "Change pin",
+            title: localize("SETTINGS_SCREEN_CHANGE_PIN_TITLE"),
             action: { [weak self] in
                 self?.presentChangePasswordScreen?()
         })
         
         let nodeSettings = SettingsCellItem(
-            title: "Daemon settings",
+            title: localize("SETTINGS_SCREEN_DAEMON_SETTINGS_TITLE"),
             action: { [weak self] in
                 self?.presentNodeSettingsScreen?()
         })
         
         let currencyPicker = SettingsPickerCellItem<Currency>(
-            title: "Currency",
+            title: localize("SETTINGS_SCREEN_CURRENCY_TITLE"),
             pickerOptions: Currency.all,
             selectedAtIndex: Currency.all.index(of: accountSettings.currency) ?? Configurations.defaultCurreny.rawValue,
             onFinish:  { [weak self] pickedItem in
@@ -197,13 +197,13 @@ final class SettingsViewController: BaseViewController<SettingsView>, UITableVie
         ]
         
         let wallets = SettingsCellItem(
-            title: "Add or switch wallets",
+            title: localize("SETTINGS_SCREEN_ADD_OR_SWITCH_WALLET_TITLE"),
             action: { [weak self] in
                 self?.presentWalletsScreen?()
         })
         
         let showKeys = SettingsCellItem(
-            title: "Show keys",
+            title: localize("SETTINGS_SCREEN_SHOW_KEYS_TITLE"),
             action: { [weak self] in
                 self?.presentWalletKeys?()
         })
@@ -212,7 +212,7 @@ final class SettingsViewController: BaseViewController<SettingsView>, UITableVie
         
         if showSeedIsAllow {
             let showSeed = SettingsCellItem(
-                title: "Show seed",
+                title: localize("SETTINGS_SCREEN_SHOW_SEED_TITLE"),
                 action: { [weak self] in
                     self?.presentWalletSeed?()
             })
@@ -260,7 +260,7 @@ final class SettingsViewController: BaseViewController<SettingsView>, UITableVie
         sections[.contactUs] = [SettingsTextViewCellItem(attributedString: attributedString)]
         
         let prviacyPolicy = SettingsCellItem(
-            title: "Privacy policy",
+            title: localize("SETTINGS_SCREEN_PRIVACY_POLICY_TITLE"),
             action: { [weak self] in
                 let safariViewController = SFSafariViewController(url: URL(string: "https://havenwallet.com/#/ios-privacy-policy")!)
                 self?.present(safariViewController, animated: true)
@@ -338,15 +338,15 @@ final class SettingsViewController: BaseViewController<SettingsView>, UITableVie
         
         switch section {
         case .personal:
-            titleLabel.text = "Personal"
+            titleLabel.text = localize("SETTINGS_SCREEN_SECTION_PERSONAL")
         case .wallets:
-            titleLabel.text = "Wallets"
+            titleLabel.text = localize("SETTINGS_SCREEN_SECTION_WALLETS")
         case .advanced:
-            titleLabel.text = "Advanced"
+            titleLabel.text = localize("SETTINGS_SCREEN_SECTION_ADVANCED")
         case .contactUs:
-            titleLabel.text = "Contact us"
+            titleLabel.text = localize("SETTINGS_SCREEN_SECTION_CONTACT")
         case .other:
-            titleLabel.text = "Other"
+            titleLabel.text = localize("SETTINGS_SCREEN_SECTION_OTHER")
         }
         
         return view

@@ -1,0 +1,242 @@
+/* 
+  Localizable.strings
+  CakeWallet
+
+  Copyright © 2018 Mykola Misiura. All rights reserved.
+*/
+
+"CANCEL" = "Cancel";
+"RESET" = "Reset";
+"CHANGE" = "Change";
+"DELETE" = "Delete";
+"REMOVE" = "Remove";
+"CONNECTING" = "Connecting";
+"TODAY" = "Today";
+"YESTERDAY" = "Yesterday";
+"ADDRESS" = "Address";
+"ACCEPT" = "Accept";
+"ID" = "ID";
+"PAYMENTID" = "PaymentID";
+"DATE" = "Date";
+"AMOUNT" = "Amount";
+"FEE" = "Fee";
+"HEIGHT" = "Height";
+"NEXT" = "Next";
+"OK" = "OK";
+"AUTHENTICATING" = "Authenticating";
+"DONE" = "Done";
+"SWITCH" = "Switch";
+"YES" = "Yes";
+"RECONNECT" = "Reconnect";
+"OR" = "or";
+"COPY" = "Copy";
+"SHARE" = "Share";
+"CONTINUE" = "Continue";
+"WALLET_NAME" = "Wallet name";
+"APPROXIMATE" = "Approximate";
+"SEND" = "Send";
+"SCAN" = "Scan";
+"ALL" = "All";
+
+// Onboarding
+"SETUP_NEW_PIN_NAV_TITLE" = "Setup pin";
+"SETUP_NEW_PIN_TITLE" = "Enter your pin";
+"SETUP_NEW_PIN_REPEAT_TITLE" = "Repeat your pin";
+"SETUP_NEW_PIN_SUCCESS_TITLE" = "Your PIN has been set up successfully";
+"SETUP_SEED_ON_NEXT_PAGE_DESCRIPTION" = "The next page will show you a seed. Please write these down just in case you lose or wipe your phone.\nYou can also see the seed again in the settings menu.";
+
+// Login
+"PIN_SCREEN_ENTER_PIN" = "Enter your pin";
+"PIN_SCREEN_PIN_INPUT_BLOCKED" = "Try enter pin after: ";
+
+// Status view
+"STATUS_VIEW_UPDATE_PROGRESS_DESCRIPTION" = "Blocks remaining: %@ %@%";
+"STATUS_VIEW_CONNECTING_TO_NODE_DATE" = "Trying to connect to remote node %@.";
+"STATUS_VIEW_CONNECTING_TO_NODE" = "Trying to connect to remote node.";
+"STATUS_VIEW_NOT_CONNECTED" = "Not connected";
+"STATUS_VIEW_CONNECTING" = "Connecting";
+"STATUS_VIEW_CONNECTED" = "Connected";
+"STATUS_VIEW_STARTING_SYNC" = "Starting sync..";
+"STATUS_VIEW_SYNCHRONIZED" = "Synchronized";
+
+// Balance view
+"BALANCE_VIEW_TOTAL_BALANCE_DESCRIPTION" = "Total balance (XHV)";
+"BALANCE_VIEW_RATE_BALANCE_TITLE" = "Rate balance";
+"BALANCE_VIEW_AVAILABLE_BALANCE_TITLE" = "Available  balance (XHV)";
+"BALANCE_VIEW_BALANCE_IN_OTHER_CURRENCY_TITLE" = "Balance in %@";
+
+// Restore view
+"RESTORE_VIEW_HEIGHT_TITLE" = "Restore height (optional)";
+"RESTORE_VIEW_DATE_TITLE" = "Restore from date (optional)";
+
+// Wallet Table View Cell
+"WALLET_TABLE_VIEW_CELL" = "%@ (watch-only)";
+
+// Transaction Table View Cell
+"TRANSACTION_TABLE_VIEW_CELL_RECEIVED" = "Received";
+"TRANSACTION_TABLE_VIEW_CELL_SENT" = "Sent";
+"TRANSACTION_TABLE_VIEW_CELL_PENDING" = "%@ (pending)";
+
+// New node screen
+"NEW_NODE_SCREEN_DAEMON_ADDRESS_TITLE" = "Daemon address";
+"NEW_NODE_SCREEN_DAEMON_PORT_TITLE" = "Daemon port";
+"NEW_NODE_SCREEN_LOGIN_TITLE" = "Login (optional)";
+"NEW_NODE_SCREEN_PASSWORD_TITLE" = "Password (optional)";
+"NEW_NODE_SCREEN_SAVE_TITLE" = "Save";
+"NEW_NODE_SCREEN_NAV_TITLE" = "Node settings";
+"NEW_NODE_SCREEN_RESET_SETTINGS_CONFIRM_TITLE" = "Reset settings";
+"NEW_NODE_SCREEN_RESET_SETTINGS_CONFIRM_DESCRIPTION" = "Are you sure that you want reset settings to default?";
+"NEW_NODE_SCREEN_RESET_SETTINGS_CONFIRM_CONFIRM_ACTION" = "Reset";
+"NEW_NODE_SCREEN_SAVING" = "Saving";
+"NEW_NODE_SCREEN_SAVED" = "Saved";
+
+// Node switch screen
+"NODE_SWITCH_SCREEN_AUTO_SWITCH_NODE_TITLE" = "Auto switch node";
+"NODE_SWITCH_SCREEN_NAV_TITLE" = "Nodes";
+"NODE_SWITCH_SCREEN_CHANGE_NODE_TITLE" = "Change node";
+"NODE_SWITCH_SCREEN_CHANGE_NODE_BODY" = "Are you sure that you want to change node to selected node?";
+"NODE_SWITCH_SCREEN_RESET_NODES_TITLE" = "Reset nodes list to default";
+"NODE_SWITCH_SCREEN_RESET_NODES_BODY" = "Are you sure that you want to reset nodes list to deault?";
+"NODE_SWITCH_SCREEN_CONNECTING_TO_DEFAULT_NODE" = "Connecting to default node";
+"NODE_SWITCH_SCREEN_CHANGED_AND_CONNECTED" = "Changed and connected";
+"NODE_SWITCH_SCREEN_REMOVE_NODE_TITLE" = "Remove node";
+"NODE_SWITCH_SCREEN_REMOVE_NODE_BODY" = "Are you sure that you want to delete selected node?";
+
+// Transactions screen
+"TRANSACTIONS_SCREEN_NAV_TITLE" = "Transactions";
+
+// Wallet keys screen
+"WALLET_KEYS_SCREEN_NAV_TITLE" = "Keys";
+"WALLET_KEYS_SCREEN_PUBLIC_VIEW" = "Public view";
+"WALLET_KEYS_SCREEN_SECRET_VIEW" = "Secret view";
+"WALLET_KEYS_SCREEN_PUBLIC_SPEND" = "Public spend";
+"WALLET_KEYS_SCREEN_SECRET_SPEND" = "Secret spend";
+
+// Recovery wallet screen
+"RECOVERY_WALLET_SCREEN_WALLET_NAME" = "Wallet name";
+"RECOVERY_WALLET_SCREEN_WALLET_VIEW_KEY" = "View key (private)";
+"RECOVERY_WALLET_SCREEN_WALLET_SPEND_KEY" = "Spend key (private)";
+"RECOVERY_WALLET_SCREEN_RECOVER" = "Recover";
+"RECOVERY_WALLET_SCREEN_NAV_TITLE" = "Recover wallet";
+"RECOVERY_WALLET_SCREEN_WATCH_ONLY_DESCRIPTION" = "* Leave this blank for a watch only wallet.";
+"RECOVERY_WALLET_SCREEN_RECOVERING_WALLET" = "Recovering wallet";
+
+// Recovery wallet options screen
+"RECOVERY_WALLET_OPTIONS_SCREEN_RECOVER_SEED" = "Recover from seed";
+"RECOVERY_WALLET_OPTIONS_SCREEN_RECOVER_KEYS" = "Recover from keys";
+"RECOVERY_WALLET_OPTIONS_SCREEN_NAV_TITLE" = "Recovery wallet";
+
+// Node settings screen
+"NODE_SETTINGS_SCREEN_NAV_TITLE" = "Daemon settings";
+"NODE_SETTINGS_SCREEN_DESCRIPTION" = "If you don't know what this setting is for, please don't change the settings.";
+
+// Transaction details screen
+"TRANSACTION_DETAILS_SCREEN_NAV_TITLE" = "Transaction details";
+
+// Welcome screen
+"WELCOME_SCREEN_TITLE" = "Welcome";
+"WELCOME_SCREEN_SUBTITLE" = "to %@";
+"WELCOME_SCREEN_DESCRIPTION" = "On the next screen you’ll be able to recover a wallet using your seed or private keys, or create a new wallet.\n\nAlways backup your seed and private keys offline.";
+
+// Verify pin screen
+"VERIFY_PIN_SCREEN_VERIFYING_PIN" = "Verifying password";
+
+// Load wallet screen
+"LOAD_WALLET_SCREEN_LOADING" = "Loading wallet - %@";
+"LOAD_WALLET_SCREEN_LOADING_ERROR_BODY" = "We are having trouble loading your wallet file as it may be damaged.  We can try to recover your wallet or you can open/add another wallet.";
+"LOAD_WALLET_SCREEN_RECOVER_WALLET" = "Yes, try to recover this wallet";
+"LOAD_WALLET_SCREEN_OPEN_ANOTHER_WALLET" = "I will open/add another wallet";
+"LOAD_WALLET_SCREEN_ERROR_LOADING_ANOTHER" = "We had some trouble loading your wallet. Please try to recover it using your seed in the setting screen.";
+
+// Change password screen
+"CHANGE_PASSWORD_SCREEN_DESCRIPTION" = "Enter your pin";
+"CHANGE_PASSWORD_SCREEN_ENTER_NEW_PIN" = "Enter your new pin";
+"CHANGE_PASSWORD_SCREEN_REPEAT_NEW_PIN" = "Enter your new pin again";
+"CHANGE_PASSWORD_SCREEN_SUCCESS" = "Your PIN has been set up successfully";
+
+// Login screen
+"LOGIN_SCREEN_UNLOCKING_WALLET_TITLE" = "Unlocking your wallet";
+
+// Settings screen
+"SETTINGS_SCREEN_NAV_TITLE" = "Settings";
+"SETTINGS_SCREEN_VERSION" = "Version %@";
+"SETTINGS_SCREEN_BIOMETRIC_AUTHENTICATON_TITLE" = "Allow biometric authentication";
+"SETTINGS_SCREEN_REMEMBER_PIN_TITLE" = "Remember pin";
+"SETTINGS_SCREEN_FEE_PRIORITY_TITLE" = "Fee priority";
+"SETTINGS_SCREEN_CHANGE_PIN_TITLE" = "Change pin";
+"SETTINGS_SCREEN_DAEMON_SETTINGS_TITLE" = "Daemon settings";
+"SETTINGS_SCREEN_CURRENCY_TITLE" = "Currency";
+"SETTINGS_SCREEN_ADD_OR_SWITCH_WALLET_TITLE" = "Add or switch wallets";
+"SETTINGS_SCREEN_SHOW_KEYS_TITLE" = "Show keys";
+"SETTINGS_SCREEN_SHOW_SEED_TITLE" = "Show seed";
+"SETTINGS_SCREEN_PRIVACY_POLICY_TITLE" = "Privacy policy";
+"SETTINGS_SCREEN_SECTION_PERSONAL" = "Personal";
+"SETTINGS_SCREEN_SECTION_WALLETS" = "Wallets";
+"SETTINGS_SCREEN_SECTION_ADVANCED" = "Advanced";
+"SETTINGS_SCREEN_SECTION_CONTACT" = "Contact us";
+"SETTINGS_SCREEN_SECTION_OTHER" = "Other";
+
+// Dashboard screen
+"DASBOARD_SCREEN_SHOW_ALL" = "Show all";
+"DASBOARD_SCREEN_NAV_TITLE" = "Dashboard";
+"DASBOARD_SCREEN_CONNECTION_ERROR_TITLE" = "Connection problems";
+"DASBOARD_SCREEN_CONNECTION_ERROR_BODY" = "Cannot connect to remote node. Please switch to another.";
+"DASBOARD_SCREEN_WARNING_ON_RECEIVE_MESSAGE" = "Do not send XHV to this address until the update is complete.\nPlease wait.";
+
+// Create new wallet
+"CREATE_NEW_WALLET_ACTION_BUTTON" = "Create a new wallet";
+"CREATE_NEW_WALLET_RECOVER_WALLET_ACTION_BUTTON" = "Recover wallet";
+"CREATE_NEW_WALLET_NAV_TITLE" = "Sign up/Sign in";
+"CREATE_NEW_WALLET_RECOVERY_DESCRIPTION" = "Haven wallet recovery is a slow process.\nThe recovery does not work in the background.";
+
+// Recovery screen
+"RECOVERY_SCREEN_WALLET_NAME_TITLE" = "Wallet name";
+"RECOVERY_SCREEN_WALLET_NAME_PLACEHOLDER" = "Enter wallet's name";
+"RECOVERY_SCREEN_CONFIRM_BUTTON_TITLE" = "Recover";
+"RECOVERY_SCREEN_SEED_NAME_PLACEHOLDER" = "Enter seed";
+"RECOVERY_SCREEN_SEED_NAME_PLACEHOLDER" = "Enter seed";
+"RECOVERY_SCREEN_NAV_TITLE" = "Recover wallet";
+"RECOVERY_SCREEN_RECOVERYING_WALLET" = "Recovering wallet";
+
+// Seed screen
+"SEED_SCREEN_NAV_TITLE" = "Seed";
+
+// New wallet screen
+"NEW_WALLET_SCREEN_NAV_TITLE" = "New wallet";
+"NEW_WALLET_SCREEN_CREATING_WALLET" = "Creating wallet";
+"NEW_WALLET_SCREEN_CREATE_WALLET_ACTION_TITLE" = "Create wallet";
+"NEW_WALLET_SCREEN_ERROR_MESSAGE" = "Wallet with name - %@ is already exist.";
+
+// Wallets list screen
+"WALLETS_LIST_SCREEN_NAV_TITLE" = "Wallets";
+"WALLETS_LIST_SCREEN_WALLETS" = "%@ wallets";
+"WALLETS_LIST_SCREEN_WALLETS_LOAD_WALLET" = "Load wallet";
+"WALLETS_LIST_SCREEN_WALLETS_CANNOT_SHOW_SEED_ERROR" = "Can't show seed for watch-only wallet";
+"WALLETS_LIST_SCREEN_WALLETS_REMOVE_WALLET_TITLE" = "Remove wallet";
+"WALLETS_LIST_SCREEN_WALLETS_REMOVE_WALLET_DESCRIPTION" = "Are you sure that you want to delete selected wallet?";
+
+// Receive screen
+"RECEIVE_SCREEN_AMOUNT_PLACEHOLDER" = "Amount (optional)";
+"RECEIVE_SCREEN_COPY_ADDRESS" = "Copy address";
+"RECEIVE_SCREEN_PAYMENT_ID_PLACEHOLDER" = "Payment ID (optional)";
+"RECEIVE_SCREEN_PAYMENT_ID_TITLE" = "Payment ID";
+"RECEIVE_SCREEN_INTEGRATED_ADDRESS_PLACEHOLDER" = "Integrated address (optional)";
+"RECEIVE_SCREEN_INTEGRATED_ADDRESS_TITLE" = "Integrated address";
+"RECEIVE_SCREEN_NEW_PAYMENT_ID" = "New payment ID";
+"RECEIVE_SCREEN_EMAIL_ERROR_UNAVAILABLE" = "Sending email is not configured on this device.";
+"RECEIVE_SCREEN_TEXT_ERROR_UNAVAILABLE" = "Sending text message is not configured on this device.";
+"RECEIVE_SCREEN_NAV_TITLE" = "Receive";
+"RECEIVE_SCREEN_MY_XHV_ADDRESS" = "My XHV address";
+"RECEIVE_SCREEN_SEND_EMAIL" = "Send email";
+"RECEIVE_SCREEN_SEND_TEXT" = "Send text message";
+"RECEIVE_SCREEN_COPIED" = "Copied";
+
+// Send screen
+"SEND_SCREEN_HAVEN_ADDRESS" = "Haven address";
+"SEND_SCREEN_ESTIMATED_FEE" = "Estimated fee:";
+"SEND_SCREEN_NAV_TITLE" = "Send";
+"SEND_SCREEN_FEE_PRIORITY_DESCRIPTION" = "Currently the fee is set at %@ priority. Transaction priority can be adjusted in the settings.";
+"SEND_SCREEN_CREATING_TRANSACTION" = "Creating transaction";
+"SEND_SCREEN_CONFIRM_SENDING" = "Confirm sending";
+"SEND_SCREEN_CONFIRM_SENDING_DETAILS" = "Commit transaction\nAmount: %@\nFee: %@";
+"SEND_SCREEN_TRANSACTION_CREATED" = "Transaction created";

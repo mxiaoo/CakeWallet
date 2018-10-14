@@ -76,16 +76,16 @@ final class ReceiveView: BaseView {
     let innerView: UIView
     
     required init() {
-        amountTextField = FloatingLabelTextField(placeholder: "Amount (optional)", title: "Amount")
+        amountTextField = FloatingLabelTextField(placeholder: localize("RECEIVE_SCREEN_AMOUNT_PLACEHOLDER"), title: localize("AMOUNT"))
         qrImageView = UIImageView()
         addressLabel = UILabel(font: .avenirNextBold(size: 15))
-        copyAddressButton = PrimaryButton(title: "Copy address".uppercased())
+        copyAddressButton = PrimaryButton(title: localize("RECEIVE_SCREEN_COPY_ADDRESS").uppercased())
         innerView = CardView()
-        paymentIdTextField = FloatingLabelTextField(placeholder: "Payment ID (optional)", title: "Payment ID")
-        integratedAddressTextField = FloatingLabelTextField(placeholder: "Integrated address  (optional)", title: "Integrated address")
-        generatePaymentIdButton = SecondaryButton(title: "New payment ID".uppercased())
-        copyPaymentIdButton = SecondaryButton(title: "Copy".uppercased())
-        copyIntegratedAddressButton = SecondaryButton(title: "Copy".uppercased())
+        paymentIdTextField = FloatingLabelTextField(placeholder: localize("RECEIVE_SCREEN_PAYMENT_ID_PLACEHOLDER"), title: localize("RECEIVE_SCREEN_PAYMENT_ID_TITLE"))
+        integratedAddressTextField = FloatingLabelTextField(placeholder: localize("RECEIVE_SCREEN_INTEGRATED_ADDRESS_PLACEHOLDER"), title: localize("RECEIVE_SCREEN_INTEGRATED_ADDRESS_TITLE"))
+        generatePaymentIdButton = SecondaryButton(title: localize("RECEIVE_SCREEN_NEW_PAYMENT_ID").uppercased())
+        copyPaymentIdButton = SecondaryButton(title: localize("COPY").uppercased())
+        copyIntegratedAddressButton = SecondaryButton(title: localize("COPY").uppercased())
         super.init()
     }
     

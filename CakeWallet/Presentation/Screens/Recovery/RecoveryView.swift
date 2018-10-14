@@ -17,9 +17,9 @@ final class RecoveryView: BaseView {
     let restoreFromHeightView: RestoreFromHeightView
     
     required init() {
-        walletNameTextField = FloatingLabelTextField(placeholder: "Enter wallets name", title: "Wallet name")
+        walletNameTextField = FloatingLabelTextField(placeholder: localize("RECOVERY_SCREEN_WALLET_NAME_PLACEHOLDER"), title: localize("RECOVERY_SCREEN_WALLET_NAME_TITLE"))
         seedTextView = UITextView()
-        confirmButton = PrimaryButton(title: "Recover")
+        confirmButton = PrimaryButton(title: localize("RECOVERY_SCREEN_CONFIRM_BUTTON_TITLE"))
         placeholderLabel = UILabel()
         restoreFromHeightView = RestoreFromHeightView()
         super.init()
@@ -29,7 +29,7 @@ final class RecoveryView: BaseView {
         super.configureView()
         seedTextView.delegate = self
        
-        placeholderLabel.text = "Enter seed"
+        placeholderLabel.text = localize("RECOVERY_SCREEN_SEED_NAME_PLACEHOLDER")
         placeholderLabel.sizeToFit()
         seedTextView.addSubview(placeholderLabel)
         placeholderLabel.textColor = UIColor.havenTextLightGrey

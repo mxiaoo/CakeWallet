@@ -33,7 +33,7 @@ final class SeedViewController: BaseViewController<SeedView> {
     }
     
     override func configureBinds() {
-        title = "Seed"
+        title = localize("SEED_SCREEN_NAV_TITLE")
         let shareButton = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(showMenu))
         navigationItem.rightBarButtonItem = shareButton
         contentView.seedTextView.text = seed
@@ -51,11 +51,11 @@ final class SeedViewController: BaseViewController<SeedView> {
     @objc
     private func showMenu() {
         let alertViewController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
-        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
-        let copyAction = UIAlertAction(title: "Copy", style: .default) { _ in
+        let cancelAction = UIAlertAction(title: localize("CANCEL"), style: .cancel)
+        let copyAction = UIAlertAction(title: localize("COPY"), style: .default) { _ in
             UIPasteboard.general.string = self.seed
         }
-        let shareAction = UIAlertAction(title: "Share", style: .default) { _ in
+        let shareAction = UIAlertAction(title: localize("SHARE"), style: .default) { _ in
             let activityViewController = UIActivityViewController(
                 activityItems: [self.seed],
                 applicationActivities: nil)

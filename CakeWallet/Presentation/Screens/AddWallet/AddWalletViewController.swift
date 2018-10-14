@@ -28,13 +28,13 @@ final class AddWalletViewController: BaseViewController<AddWalletView> {
     }
     
     override func configureBinds() {
-        title = "Sign up/Sign in"
+        title = localize("CREATE_NEW_WALLET_NAV_TITLE")
         contentView.newWalletButton.addTarget(self, action: #selector(createNewWallet), for: .touchUpInside)
         contentView.recoveryWalletButton.addTarget(self, action: #selector(recoveryNewWallet), for: .touchUpInside)
         
         // FIX-ME: Unnamed constant
         
-        contentView.recoveryDescriptionLabel.text = "Haven wallet recovery is a slow process.\nThe recovery does not work in the background."
+        contentView.recoveryDescriptionLabel.text = localize("CREATE_NEW_WALLET_RECOVERY_DESCRIPTION")
     }
    
     @objc

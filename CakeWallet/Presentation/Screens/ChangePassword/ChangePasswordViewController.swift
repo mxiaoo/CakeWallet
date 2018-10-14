@@ -28,7 +28,7 @@ final class ChangePasswordViewController: BaseViewController<BaseView> {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        pinPasswordViewController.descriptionText = "Enter your password"
+        pinPasswordViewController.descriptionText = localize("CHANGE_PASSWORD_SCREEN_DESCRIPTION")
         pinPasswordViewController.onCloseHandler = { [weak self] in self?.dismiss(animated: true) }
         pinPasswordViewController.pin { [weak self] pinPassword in
             guard
@@ -43,7 +43,7 @@ final class ChangePasswordViewController: BaseViewController<BaseView> {
                     .then { _ -> Void in
                         self?.oldPassword = pinPassword
                         self?.pinPasswordViewController.empty()
-                        self?.pinPasswordViewController.descriptionText = "Enter your new password"
+                        self?.pinPasswordViewController.descriptionText = localize("CHANGE_PASSWORD_SCREEN_ENTER_NEW_PIN")
                     }.catch { error in
                         self?.pinPasswordViewController.empty()
                         self?.showError(error)
@@ -54,7 +54,7 @@ final class ChangePasswordViewController: BaseViewController<BaseView> {
                 if newPassword.isEmpty {
                     self?.newPassword = pinPassword
                     self?.pinPasswordViewController.empty()
-                    self?.pinPasswordViewController.descriptionText = "Enter your new password again"
+                    self?.pinPasswordViewController.descriptionText = localize("CHANGE_PASSWORD_SCREEN_REPEAT_NEW_PIN")
                     return
                 }
             }
@@ -76,8 +76,8 @@ final class ChangePasswordViewController: BaseViewController<BaseView> {
     }
     
     private func showSuccessAlert() {
-        let alert = UIAlertController(title: nil, message: "Your PIN has been set up successfully", preferredStyle: .alert)
-        let ok = UIAlertAction(title: "Ok", style: .default) { [weak self] _ in
+        let alert = UIAlertController(title: nil, message: localize("CHANGE_PASSWORD_SCREEN_SUCCESS"), preferredStyle: .alert)
+        let ok = UIAlertAction(title: localize("OK"), style: .default) { [weak self] _ in
             self?.reset()
             self?.onPasswordChanged?()
         }
@@ -87,7 +87,7 @@ final class ChangePasswordViewController: BaseViewController<BaseView> {
     
     private func reset() {
         pinPasswordViewController.empty()
-        pinPasswordViewController.descriptionText = "Enter your password"
+        pinPasswordViewController.descriptionText = localize("PIN_SCREEN_ENTER_PIN")
         oldPassword = ""
     }
 }

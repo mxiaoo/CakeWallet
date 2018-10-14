@@ -20,11 +20,11 @@ final class RecoveryWalletFromKeysView: BaseView {
     let contentView: UIView
     
     required init() {
-        nameTextField = FloatingLabelTextField(placeholder: "Wallet name")
-        publicKeyTextField = FloatingLabelTextField(placeholder: "Address")
-        viewKeyTextField = FloatingLabelTextField(placeholder: "View key (private)")
-        spendKeyTextField = FloatingLabelTextField(placeholder: "Spend key (private)")
-        confirmButton = PrimaryButton(title: "Recover")
+        nameTextField = FloatingLabelTextField(placeholder: localize("RECOVERY_WALLET_SCREEN_WALLET_NAME"))
+        publicKeyTextField = FloatingLabelTextField(placeholder: localize("ADDRESS"))
+        viewKeyTextField = FloatingLabelTextField(placeholder: localize("RECOVERY_WALLET_SCREEN_WALLET_VIEW_KEY"))
+        spendKeyTextField = FloatingLabelTextField(placeholder: localize("RECOVERY_WALLET_SCREEN_WALLET_SPEND_KEY"))
+        confirmButton = PrimaryButton(title: localize("RECOVERY_WALLET_SCREEN_RECOVER"))
         watchOnlyDescriptionLabel = UILabel(font: .avenirNextMedium(size: 14))
         restoreFromHeightView = RestoreFromHeightView()
         scrollView = UIScrollView()

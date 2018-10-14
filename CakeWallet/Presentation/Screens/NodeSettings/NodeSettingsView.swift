@@ -18,13 +18,13 @@ final class NodeSettingsView: BaseView {
     let resetSettings: UIButton
     
     required init() {
-        nodeAddressLabel = FloatingLabelTextField(placeholder: "Daemon address")
-        nodePortLabel = FloatingLabelTextField(placeholder: "Daemon port")
-        loginLabel = FloatingLabelTextField(placeholder: "Login (optional)")
-        passwordLabel = FloatingLabelTextField(placeholder: "Password (optional)")
+        nodeAddressLabel = FloatingLabelTextField(placeholder: localize("NEW_NODE_SCREEN_DAEMON_ADDRESS_TITLE"))
+        nodePortLabel = FloatingLabelTextField(placeholder: localize("NEW_NODE_SCREEN_DAEMON_PORT_TITLE"))
+        loginLabel = FloatingLabelTextField(placeholder: localize("NEW_NODE_SCREEN_LOGIN_TITLE"))
+        passwordLabel = FloatingLabelTextField(placeholder: localize("NEW_NODE_SCREEN_PASSWORD_TITLE"))
         saveButton = PrimaryButton(title: "Connect")
         descriptionLabel = UILabel(font: .avenirNextMedium(size: 12))
-        resetSettings = SecondaryButton(title: "Reset settings")
+        resetSettings = SecondaryButton(title: localize("NEW_NODE_SCREEN_RESET_TITLE"))
         super.init()
     }
     

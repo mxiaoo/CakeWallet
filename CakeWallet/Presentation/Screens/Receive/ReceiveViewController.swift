@@ -20,9 +20,9 @@ extension MessageUIEmailError: LocalizedError {
     var errorDescription: String? {
         switch self {
         case .emailUnavailable:
-            return "Sending email is not configured on this device"
+            return localize("RECEIVE_SCREEN_EMAIL_ERROR_UNAVAILABLE")
         case .textMessageUnavailable:
-            return "Sending text message is not configured on this device"
+            return localize("RECEIVE_SCREEN_TEXT_ERROR_UNAVAILABLE")
         }
     }
 }
@@ -42,7 +42,7 @@ final class ReceiveViewController: BaseViewController<ReceiveView>, MFMailCompos
     }
     
     override func configureDescription() {
-        title = "Receive"
+        title = localize("RECEIVE_SCREEN_NAV_TITLE")
         updateTabBarIcon(name: .inbox)
     }
     
@@ -164,7 +164,7 @@ final class ReceiveViewController: BaseViewController<ReceiveView>, MFMailCompos
         }
     }
     
-    private func sendEmail(subject: String = "My XHV address", text: String) {
+    private func sendEmail(subject: String = localize("RECEIVE_SCREEN_MY_XHV_ADDRESS"), text: String) {
         guard MFMailComposeViewController.canSendMail() else {
             showError(MessageUIEmailError.emailUnavailable)
             return
@@ -183,19 +183,19 @@ final class ReceiveViewController: BaseViewController<ReceiveView>, MFMailCompos
     @objc
     private func showMenu() {
         let alertViewController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
-        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
-        let copyAction = UIAlertAction(title: "Copy", style: .default) { [weak self] _ in
+        let cancelAction = UIAlertAction(title: localize("CANCEL"), style: .cancel)
+        let copyAction = UIAlertAction(title: localize("COPY"), style: .default) { [weak self] _ in
             UIPasteboard.general.string = self?.wallet.address
         }
         
-        let sendEmailAction = UIAlertAction(title: "Send email", style: .default) { [weak self] _ in
+        let sendEmailAction = UIAlertAction(title: localize("RECEIVE_SCREEN_SEND_EMAIL"), style: .default) { [weak self] _ in
             guard let this = self else {
                 return
             }
             
             this.sendEmail(text: this.wallet.address)
         }
-        let sendTextMessageAction = UIAlertAction(title: "Send text message", style: .default) { [weak self] _ in
+        let sendTextMessageAction = UIAlertAction(title: localize("RECEIVE_SCREEN_SEND_TEXT"), style: .default) { [weak self] _ in
             guard let this = self else {
                 return
             }
@@ -218,7 +218,7 @@ final class ReceiveViewController: BaseViewController<ReceiveView>, MFMailCompos
     
     private func copy(text: String) {
         UIPasteboard.general.string = text
-        let alert = UIAlertController(title: nil, message: "Copied", preferredStyle: .alert)
+        let alert = UIAlertController(title: nil, message: localize("RECEIVE_SCREEN_COPIED"), preferredStyle: .alert)
         present(alert, animated: true, completion: nil)
         let time = DispatchTime.now() + 1
         DispatchQueue.main.asyncAfter(deadline: time){

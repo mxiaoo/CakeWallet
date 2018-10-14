@@ -28,7 +28,7 @@ final class SetupPinPasswordViewController: BaseViewController<BaseView> {
     }
     
     override func configureBinds() {
-        title = "Setup Pin"
+        title = localize("SETUP_NEW_PIN_NAV_TITLE")
         pinPasswordViewController.pin { [weak self] pinPassword in
             guard let this = self else { return }
             
@@ -51,7 +51,7 @@ final class SetupPinPasswordViewController: BaseViewController<BaseView> {
     }
     
     private func showSuccessAlert() {
-        let alert = UIAlertController(title: nil, message: "Your PIN has been set up successfully", preferredStyle: .alert)
+        let alert = UIAlertController(title: nil, message: localize("SETUP_NEW_PIN_SUCCESS_TITLE"), preferredStyle: .alert)
         let ok = UIAlertAction(title: "Ok", style: .default) { _ in
             self.reset()
             self.setuped?()
@@ -61,7 +61,7 @@ final class SetupPinPasswordViewController: BaseViewController<BaseView> {
     }
     
     private func reset() {
-        pinPasswordViewController.descriptionText = "Enter your pin"
+        pinPasswordViewController.descriptionText = localize("SETUP_NEW_PIN_TITLE")
         pinPasswordViewController.empty()
         password = ""
     }
@@ -75,7 +75,7 @@ final class SetupPinPasswordViewController: BaseViewController<BaseView> {
     }
     
     private func prepareRepeatingPinPassword() {
-        pinPasswordViewController.descriptionText = "Repeat your pin"
+        pinPasswordViewController.descriptionText = localize("SETUP_NEW_PIN_REPEAT_TITLE")
         pinPasswordViewController.empty()
     }
 }

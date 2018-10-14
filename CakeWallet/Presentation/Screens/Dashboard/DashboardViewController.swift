@@ -41,9 +41,9 @@ final class DashboardViewController: BaseViewController<DashboardView>,
     }
     
     override func configureDescription() {
-        title = "Dashboard"
+        title = localize("DASBOARD_SCREEN_NAV_TITLE")
         tabBarItem.image = UIImage(named: "haven-logo")?.resized(to: CGSize(width: 32, height: 32))
-        tabBarItem.title = "Dashboard"
+        tabBarItem.title = localize("DASBOARD_SCREEN_NAV_TITLE")
     }
     
     override func configureBinds() {
@@ -76,7 +76,7 @@ final class DashboardViewController: BaseViewController<DashboardView>,
                 self?.contentView.balanceViewContainer.contentView.unlockedBalance = wallet.unlockedBalance.formatted()
                 
                 if wallet.isWatchOnly {
-                    self?.navigationItem.title = "\(wallet.name) (watch-only)"
+                    self?.navigationItem.title = localize("WALLET_TABLE_VIEW_CELL", wallet.name)
                 } else {
                     self?.navigationItem.title = wallet.name
                 }
@@ -139,7 +139,7 @@ final class DashboardViewController: BaseViewController<DashboardView>,
     func presentationController(forPresented presented: UIViewController, presenting: UIViewController?, source: UIViewController) -> UIPresentationController? {
         let nav = UINavigationController(rootViewController: presented)
         let halfSizePresentationController = HalfSizePresentationController(presentedViewController: nav, presenting: presenting)
-        let doneButton = UIBarButtonItem(title: "Done", style: .done, target: halfSizePresentationController, action: #selector(halfSizePresentationController.hide))
+        let doneButton = UIBarButtonItem(title: localize("DONE"), style: .done, target: halfSizePresentationController, action: #selector(halfSizePresentationController.hide))
         nav.topViewController?.navigationItem.leftBarButtonItem = doneButton
         return halfSizePresentationController
     }
@@ -189,12 +189,12 @@ final class DashboardViewController: BaseViewController<DashboardView>,
     
     @objc
     private func reconnect() {
-        let alert = UIAlertController(title: "Reconnect ?", message: nil, preferredStyle: .alert)
-        let okAction = UIAlertAction(title: "Yes", style: .default) { [weak self] _ in
+        let alert = UIAlertController(title: localize("RECONNECT") + "?", message: nil, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: localize("RECONNECT"), style: .default) { [weak self] _ in
             guard let connectionSettings = self?.account.connectionSettings else {
                 return
             }
-            let __alert = UIAlertController(title: nil, message: "Connecting", preferredStyle: .alert)
+            let __alert = UIAlertController(title: nil, message: localize("CONNECTING"), preferredStyle: .alert)
             self?.present(__alert, animated: true)
             self?.wallet.connect(withSettings: connectionSettings, updateState: true)
                 .then { _ -> Void in
@@ -202,15 +202,15 @@ final class DashboardViewController: BaseViewController<DashboardView>,
                 }.catch { error in
                     __alert.dismiss(animated: true) {
                         print(error)
-                        let _alert = UIAlertController(title: "Connection problems", message: "Cannot connect to remote node. Please switch to another.", preferredStyle: .alert)
+                        let _alert = UIAlertController(title: localize("DASBOARD_SCREEN_CONNECTION_ERROR_TITLE"), message: localize("DASBOARD_SCREEN_CONNECTION_ERROR_BODY"), preferredStyle: .alert)
                         _alert.modalPresentationStyle = .overFullScreen
-                        let switchAction = UIAlertAction(title: "Switch", style: .default) { _ in
+                        let switchAction = UIAlertAction(title: localize("SWITCH"), style: .default) { _ in
                             let nodeSettingsVC = try! container.resolve() as NodesListViewController
                             nodeSettingsVC.modalPresentationStyle = .overFullScreen
                             let navController = UINavigationController(rootViewController: nodeSettingsVC)
                             self?.present(navController, animated: true)
                         }
-                        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
+                        let cancelAction = UIAlertAction(title: localize("CANCEL"), style: .cancel)
                         _alert.addAction(switchAction)
                         _alert.addAction(cancelAction)
                         self?.present(_alert, animated: true)
@@ -225,7 +225,7 @@ final class DashboardViewController: BaseViewController<DashboardView>,
     
     private func showWarningOnReceive() {
         UIAlertController.showInfo(
-            message: "Do not send XHV to this address until the update is complete.\nPlease wait.",
+            message: localize("DASBOARD_SCREEN_WARNING_ON_RECEIVE_MESSAGE"),
             presentOn: self)
     }
 }

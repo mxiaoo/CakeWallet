@@ -20,11 +20,11 @@ final class NodeSettingsViewController: BaseViewController<NodeSettingsView> {
     }
     
     override func configureBinds() {
-        title = "Daemon settings"
+        title = localize("NODE_SETTINGS_SCREEN_NAV_TITLE")
         setSettings(connectionSettings)
         contentView.saveButton.addTarget(self, action: #selector(connect), for: .touchUpInside)
         contentView.resetSettings.addTarget(self, action: #selector(onResetSetting), for: .touchUpInside)
-        contentView.descriptionLabel.text = "If you don't know what this setting is for, please don't change the settings."
+        contentView.descriptionLabel.text = localize("NODE_SETTINGS_SCREEN_DESCRIPTION")
     }
     
     private func setSettings(_ settings: ConnectionSettings) {
@@ -45,8 +45,8 @@ final class NodeSettingsViewController: BaseViewController<NodeSettingsView> {
     @objc
     private func onResetSetting() {
         let alert = UIAlertController(
-            title: "Reset settings",
-            message: "Are you sure that you want reset settings to default ?",
+            title: localize("NEW_NODE_SCREEN_RESET_SETTINGS_CONFIRM_TITLE"),
+            message: localize("NEW_NODE_SCREEN_RESET_SETTINGS_CONFIRM_DESCRIPTION"),
             preferredStyle: .alert)
         let ok = UIAlertAction(title: "Ok", style: .default) { [weak self] _ in
             guard let settings = self?.account.resetConnectionSettings() else {
@@ -56,7 +56,7 @@ final class NodeSettingsViewController: BaseViewController<NodeSettingsView> {
             self?.setSettings(settings)
             self?.connect()
         }
-        let cancel = UIAlertAction(title: "Cancel", style: .cancel)
+        let cancel = UIAlertAction(title: localize("CANCEL"), style: .cancel)
         alert.addAction(ok)
         alert.addAction(cancel)
         present(alert, animated: true)
@@ -64,7 +64,7 @@ final class NodeSettingsViewController: BaseViewController<NodeSettingsView> {
     
     @objc
     private func connect() {
-        let _alert = UIAlertController.showSpinner(message: "Connecting")
+        let _alert = UIAlertController.showSpinner(message: localize("CONNECTING"))
         present(_alert, animated: true)
         
         guard
@@ -84,7 +84,7 @@ final class NodeSettingsViewController: BaseViewController<NodeSettingsView> {
             .then { [weak self] in
                 _alert.dismiss(animated: true) {
                     if let this = self {
-                        UIAlertController.showInfo(message: "Saved and connected", presentOn: this)
+                        UIAlertController.showInfo(message: localize("NODE_SWITCH_SCREEN_CHANGED_AND_CONNECTED"), presentOn: this)
                     }}
             }.catch { [weak self] error in
                 _alert.dismiss(animated: true) {

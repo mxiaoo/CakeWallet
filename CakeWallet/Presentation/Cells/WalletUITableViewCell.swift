@@ -34,7 +34,7 @@ final class WalletUITableViewCell: UITableViewCell {
     
     func configure(name: String, isWatchOnly: Bool) {
         if isWatchOnly {
-            textLabel?.text = "\(name) (watch-only)"
+            textLabel?.text = localize("WALLET_TABLE_VIEW_CELL", name)
         } else {
             textLabel?.text = name
         }

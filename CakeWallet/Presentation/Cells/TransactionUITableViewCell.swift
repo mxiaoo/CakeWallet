@@ -121,16 +121,16 @@ final class TransactionUITableViewCell: UITableViewCell {
         switch direction {
         case .incoming:
             amountLabel.textColor = .lightGreen
-            directionStr = "Received"
+            directionStr = localize("TRANSACTION_TABLE_VIEW_CELL_RECEIVED")
             imageView?.image = UIImage.fontAwesomeIcon(name: .longArrowUp, textColor: .lightGreen, size: TransactionUITableViewCell.imageSize)
         case .outgoing:
             amountLabel.textColor = .lightRed
-            directionStr = "Sent"
+            directionStr = localize("TRANSACTION_TABLE_VIEW_CELL_SENT")
             imageView?.image = UIImage.fontAwesomeIcon(name: .longArrowDown, textColor: .lightRed, size: TransactionUITableViewCell.imageSize)
         }
         
         if isPendgin {
-            directionStr = "\(directionStr) (pending)"
+            directionStr = localize("TRANSACTION_TABLE_VIEW_CELL_PENDING", directionStr)
             
             // FIX-ME: Unnamed constant
             

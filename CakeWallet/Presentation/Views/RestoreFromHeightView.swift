@@ -15,8 +15,8 @@ final class RestoreFromHeightView: BaseView {
     let datePicker: UIDatePicker
     
     required init() {
-        restoreHeightTextField = FloatingLabelTextField(placeholder: "Restore height (optional)")
-        dateTextField = FloatingLabelTextField(placeholder: "Restore from date (optional)")
+        restoreHeightTextField = FloatingLabelTextField(placeholder: localize("RESTORE_VIEW_HEIGHT_TITLE"))
+        dateTextField = FloatingLabelTextField(placeholder: localize("RESTORE_VIEW_DATE_TITLE"))
         datePicker = UIDatePicker()
         super.init()
     }

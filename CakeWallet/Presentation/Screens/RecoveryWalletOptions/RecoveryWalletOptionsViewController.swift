@@ -20,8 +20,8 @@ final class RecoveryWalletOptionsViewController: BaseViewController<RecoveryWall
     }
     
     override func configureBinds() {
-        title = "Recover wallet"
-        contentView.orLabel.text = "or"
+        title = localize("RECOVERY_WALLET_OPTIONS_SCREEN_NAV_TITLE")
+        contentView.orLabel.text = localize("OR")
         contentView.seedButton.addTarget(self, action: #selector(onRecoveryFromSeed), for: .touchUpInside)
         contentView.keysButton.addTarget(self, action: #selector(onRecoveryFromKeys), for: .touchUpInside)
     }

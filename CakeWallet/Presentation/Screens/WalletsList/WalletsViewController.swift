@@ -42,7 +42,7 @@ final class WalletsViewController: BaseViewController<WalletsView>, UITableViewD
     }
     
     override func configureBinds() {
-        title = "Wallets"
+        title = localize("WALLETS_LIST_SCREEN_NAV_TITLE")
         let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(onPresentNewWalletScreen))
         navigationItem.rightBarButtonItem = addButton
         contentView.table.delegate = self
@@ -100,7 +100,7 @@ final class WalletsViewController: BaseViewController<WalletsView>, UITableViewD
         view.backgroundColor = .groupTableViewBackground
         let titleLabel = UILabel(font: UIFont.avenirNextMedium(size: 17))
         titleLabel.frame = CGRect(origin: CGPoint(x: 10, y: 10), size: CGSize(width: view.frame.width - 45, height: 35))
-        titleLabel.text = "\(walletType.stringify()) wallets"
+        titleLabel.text = localize("WALLETS_LIST_SCREEN_WALLETS", "Haven Protocol")
 //        let addButton =  PrimaryButton(title: "Add")
 //        addButton.frame = CGRect(origin: CGPoint(x: view.frame.width - 110, y: 7), size: CGSize(width: 100, height: 35))
 //        addButton.addTarget(self, action: #selector(onPresentNewWalletScreen), for: .touchUpInside)
@@ -124,7 +124,7 @@ final class WalletsViewController: BaseViewController<WalletsView>, UITableViewD
                 return []
         }
 
-        let deleteAction = UITableViewRowAction(style: .default, title: "Delete") { (_, indexPath) in
+        let deleteAction = UITableViewRowAction(style: .default, title: localize("DELETE")) { (_, indexPath) in
             self.removeWallet(at: indexPath)
         }
 
@@ -144,16 +144,16 @@ final class WalletsViewController: BaseViewController<WalletsView>, UITableViewD
         }
         
         let alertViewController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
-        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { _ in
+        let cancelAction = UIAlertAction(title: localize("CANCEL"), style: .cancel) { _ in
             self.contentView.table.deselectRow(at: indexPath, animated: true)
         }
-        let showSeecAction = UIAlertAction(title: "Show seed", style: .default) { _ in
+        let showSeecAction = UIAlertAction(title: localize("SETTINGS_SCREEN_SHOW_SEED_TITLE"), style: .default) { _ in
             self.showSeed(for: wallet)
         }
         
         
         if  wallet.name != account.currentWalletName {
-            let loadWalletAction = UIAlertAction(title: "Load wallet", style: .default) { _ in
+            let loadWalletAction = UIAlertAction(title: localize("WALLETS_LIST_SCREEN_WALLETS_LOAD_WALLET"), style: .default) { _ in
                 self.presentLoadWalletScreen?(wallet.index)
             }
             alertViewController.addAction(loadWalletAction)
@@ -168,7 +168,7 @@ final class WalletsViewController: BaseViewController<WalletsView>, UITableViewD
     
     private func showSeed(for wallet: WalletDescription) {
         guard !wallet.isWatchOnly else {
-            let _ = UIAlertController.showInfo(message: "Can't show seed for watch-only wallet", presentOn: self)
+            let _ = UIAlertController.showInfo(message: localize("WALLETS_LIST_SCREEN_WALLETS_CANNOT_SHOW_SEED_ERROR"), presentOn: self)
             return
         }
         
@@ -178,15 +178,15 @@ final class WalletsViewController: BaseViewController<WalletsView>, UITableViewD
     private func removeWallet(at indexPath: IndexPath) {
         let wallet = getWallet(at: indexPath)
         let alert = UIAlertController(
-            title: "Remove wallet",
-            message: "Are you sure that you want to delete selected wallet ?",
+            title: localize("WALLETS_LIST_SCREEN_WALLETS_REMOVE_WALLET_TITLE"),
+            message: localize("WALLETS_LIST_SCREEN_WALLETS_REMOVE_WALLET_DESCRIPTION"),
             preferredStyle: .alert)
-        let ok = UIAlertAction(title: "Remove", style: .destructive) { [weak self] _ in
+        let ok = UIAlertAction(title: localize("WALLETS_LIST_SCREEN_WALLETS_REMOVE_WALLET_TITLE"), style: .destructive) { [weak self] _ in
             self?.presentRemoveWalletScreen?(wallet.index) {
                 self?.updateWalletsList()
             }
         }
-        let cancel = UIAlertAction(title: "Cancel", style: .cancel)
+        let cancel = UIAlertAction(title: localize("CANCEL"), style: .cancel)
         alert.addAction(ok)
         alert.addAction(cancel)
         present(alert, animated: true)

@@ -48,7 +48,7 @@ final class VerifyPinPasswordViewController: BaseViewController<BaseView>, Biome
         }
 
         pinPasswordViewController.pin { [weak self] pinPassword in
-            let alert = UIAlertController.showSpinner(message: "Verifying password")
+            let alert = UIAlertController.showSpinner(message: localize("VERIFY_PIN_SCREEN_VERIFYING_PIN"))
             self?.present(alert, animated: true)
             
             self?.account.authenticate(password: pinPassword)

@@ -30,8 +30,8 @@ final class DisclaimerView: BaseView {
         cancelButton.setTitleColor(.red, for: .normal)
         acceptButton.titleLabel?.textAlignment = .center
         cancelButton.titleLabel?.textAlignment = .center
-        acceptButton.setTitle("Accept", for: .normal)
-        cancelButton.setTitle("Cancel", for: .normal)
+        acceptButton.setTitle(localize("ACCEPT"), for: .normal)
+        cancelButton.setTitle(localize("CANCEL"), for: .normal)
         addSubview(textView)
         addSubview(acceptButton)
         addSubview(cancelButton)

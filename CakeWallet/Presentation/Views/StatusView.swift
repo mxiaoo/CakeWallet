@@ -117,7 +117,7 @@ extension StatusViewImpl: StatusView {
         let progress = updatingProgress.calculateProgress()
         let percents = progress * 100
         progressView.progress = progress
-        descriptionLabel.text = "Blocks remaining: \(updatingProgress.blocksRemaining) (\(String(format: "%.2f", percents))%)"
+        descriptionLabel.text = localize("STATUS_VIEW_UPDATE_PROGRESS_DESCRIPTION", updatingProgress.blocksRemaining, String(format: "%.2f", percents)) //"Blocks remaining: \(updatingProgress.blocksRemaining) (\(String(format: "%.2f", percents))%)"
         
         if progressView.isHidden {
             progressView.isHidden = false
@@ -162,26 +162,26 @@ extension StatusViewImpl: StatusView {
                     let time = Date().timeIntervalSince(date)
                     
                     if let formattedDate = formatter.string(from: time) {
-                        self?.setDescription("Trying to connect to remote node (\(formattedDate)).", hideProgressBar: true)
+                        self?.setDescription(localize("STATUS_VIEW_CONNECTING_TO_NODE_DATE", formattedDate), hideProgressBar: true)
                     } else {
-                        self?.setDescription("Trying to connect to remote node.", hideProgressBar: true)
+                        self?.setDescription(localize("STATUS_VIEW_CONNECTING_TO_NODE"), hideProgressBar: true)
                     }
                 })
             }
             // Failed connection to daemon.
-            setDescription("Trying to connect to remote node.", hideProgressBar: true)
+            setDescription(localize("STATUS_VIEW_CONNECTING_TO_NODE"), hideProgressBar: true)
             self.timer?.fire()
         case .notConnected:
-            setDescription("Not connected", hideProgressBar: true)
+            setDescription(localize("STATUS_VIEW_NOT_CONNECTED"), hideProgressBar: true)
         case .connecting:
-            setDescription("Connecting", hideProgressBar: true)
+            setDescription(localize("STATUS_VIEW_CONNECTING"), hideProgressBar: true)
         case .connected:
-            setDescription("Connected")
+            setDescription(localize("STATUS_VIEW_CONNECTED"))
         case .startUpdating:
-            initProgress(description: "Starting sync..", initialProgress: 0)
+            initProgress(description: localize("STATUS_VIEW_STARTING_SYNC"), initialProgress: 0)
         case .updated:
             finishProgress(
-                withText: "Synchronized",
+                withText: localize("STATUS_VIEW_SYNCHRONIZED"),
                 icon: UIImage.fontAwesomeIcon(
                     name: .check,
                     textColor: .lightGray,

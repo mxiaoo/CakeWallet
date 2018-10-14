@@ -32,7 +32,7 @@ final class LoadWalletViewController: BaseViewController<BaseView> {
             self?.dismiss(animated: true)
         }
         verifyPasswordViewController.onVerified = {
-            let alert = UIAlertController.showSpinner(message: "Loading wallet - \(self.walletName)")
+            let alert = UIAlertController.showSpinner(message: localize("LOAD_WALLET_SCREEN_LOADING", self.walletName))
             self.present(alert, animated: true)
             
             self.wallets.loadWallet(withName: self.walletName)
@@ -67,11 +67,11 @@ final class LoadWalletViewController: BaseViewController<BaseView> {
     }
     
     private func recoveryWalletWithError() {
-        let alert = UIAlertController(title: nil, message: "We are having trouble loading your wallet file as it may be damaged.  We can try to recover your wallet or you can open/add another wallet.", preferredStyle: .alert)
-        let recoveryAction = UIAlertAction(title: "Yes, try to recover this wallet", style: .default) { _ in
+        let alert = UIAlertController(title: nil, message: localize("LOAD_WALLET_SCREEN_LOADING_ERROR_BODY"), preferredStyle: .alert)
+        let recoveryAction = UIAlertAction(title: localize("LOAD_WALLET_SCREEN_RECOVER_WALLET"), style: .default) { _ in
             self.onRecoveryWallet?(self.walletName)
         }
-        let walletsAction = UIAlertAction(title: "I will open/add another wallet", style: .default) { _ in
+        let walletsAction = UIAlertAction(title: localize("LOAD_WALLET_SCREEN_OPEN_ANOTHER_WALLET"), style: .default) { _ in
             self.dismiss(animated: true)
         }
         alert.addAction(recoveryAction)
@@ -80,8 +80,8 @@ final class LoadWalletViewController: BaseViewController<BaseView> {
     }
     
     private func showWalletsList() {
-        let alert = UIAlertController(title: nil, message: "We had some trouble loading your wallet. Please try to recover it using your seed in the setting screen.", preferredStyle: .alert)
-        let okAction = UIAlertAction(title: "Ok", style: .default) { _ in
+        let alert = UIAlertController(title: nil, message: localize("LOAD_WALLET_SCREEN_ERROR_LOADING_ANOTHER"), preferredStyle: .alert)
+        let okAction = UIAlertAction(title: localize("OK"), style: .default) { _ in
             self.dismiss(animated: true)
         }
         alert.addAction(okAction)

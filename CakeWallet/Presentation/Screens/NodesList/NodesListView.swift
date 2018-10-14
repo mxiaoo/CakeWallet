@@ -28,7 +28,7 @@ final class NodesListView: BaseView {
         table.rowHeight = 50
         table.sectionHeaderHeight = 50
         table.tableFooterView = UIView()
-        autoReconnectLabel.text = "Auto switch node"
+        autoReconnectLabel.text = localize("NODE_SWITCH_SCREEN_AUTO_SWITCH_NODE_TITLE")
         addSubview(table)
         addSubview(autoReconnectSwitchView)
         addSubview(autoReconnectLabel)

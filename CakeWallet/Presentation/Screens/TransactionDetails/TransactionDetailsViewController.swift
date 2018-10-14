@@ -19,17 +19,17 @@ final class TransactionDetailsViewController: BaseViewController<TransactionDeta
             
             switch self {
             case .id:
-                str = "ID"
+                str = localize("ID")
             case .paymentId:
-                str = "PaymentID"
+                str = localize("PAYMENTID")
             case .date:
-                str = "Date"
+                str = localize("DATE")
             case .amount:
-                str = "Amount"
+                str = localize("AMOUNT")
             case .fee:
-                str = "Fee"
+                str = localize("FEE")
             case .height:
-                str = "Height"
+                str = localize("HEIGHT")
             }
             
             return str
@@ -46,7 +46,7 @@ final class TransactionDetailsViewController: BaseViewController<TransactionDeta
     }
     
     override func configureBinds() {
-        title = "Transaction details"
+        title = localize("TRANSACTION_DETAILS_SCREEN_NAV_TITLE")
         contentView.table.register(
             TransactionDetailsUITableViewCell.self,
             forCellReuseIdentifier: TransactionDetailsUITableViewCell.identifier)

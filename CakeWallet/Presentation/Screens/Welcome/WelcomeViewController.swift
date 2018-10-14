@@ -34,18 +34,18 @@ final class WelcomeViewController: BaseViewController<WelcomeView> {
         
         // FIX-ME: Unnamed constant
         
-        contentView.welcomeLabel.text = "Welcome"
+        contentView.welcomeLabel.text = localize("WELCOME_SCREEN_TITLE")
         
         if let appName = Bundle.main.displayName {
             
             // FIX-ME: Unnamed constant
             
-            contentView.welcomeSubtitleLabel.text = "to \(appName)"
+            contentView.welcomeSubtitleLabel.text = localize("WELCOME_SCREEN_SUBTITLE", appName)
         }
         
         // FIX-ME: Unnamed constant
         
-        contentView.descriptionTextView.text = "On the next screen you’ll be able to recover a wallet using your seed or private keys, or create a new wallet.\n\nAlways backup your seed and private keys offline."
+        contentView.descriptionTextView.text = localize("WELCOME_SCREEN_DESCRIPTION")
     }
     
     @objc

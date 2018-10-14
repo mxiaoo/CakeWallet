@@ -80,7 +80,7 @@ final class SignUpFlow: Flow {
             }
             
             UIAlertController.showInfo(
-                message: "The next page will show you a seed. Please write these down just in case you lose or wipe your phone.\nYou can also see the seed again in the settings menu.",
+                message: localize("SETUP_SEED_ON_NEXT_PAGE_DESCRIPTION"),
                 presentOn: newWalletViewController) { _ in
                     self.setSeedDisplayingRoute(seed: seed, name: name)
             }

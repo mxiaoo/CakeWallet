@@ -42,7 +42,7 @@ final class RecoveryViewController: BaseViewController<RecoveryView> {
     }
     
     override func configureBinds() {
-        title = "Recover wallet"
+        title = localize("RECOVERY_SCREEN_NAV_TITLE")
         contentView.confirmButton.addTarget(self, action: #selector(confirm), for: .touchUpInside)
         contentView.restoreFromHeightView.datePicker.addTarget(self, action: #selector(onDateChange(_:)), for: .valueChanged)
     }
@@ -84,7 +84,7 @@ final class RecoveryViewController: BaseViewController<RecoveryView> {
             return
         }
         
-        let _alert = UIAlertController.showSpinner(message: "Recovering wallet")
+        let _alert = UIAlertController.showSpinner(message: localize("RECOVERY_SCREEN_RECOVERYING_WALLET"))
         alert = _alert
         present(_alert, animated: true)
         

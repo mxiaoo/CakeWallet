@@ -25,7 +25,7 @@ final class NewWalletViewController: BaseViewController<NewWalletView>, UITextFi
     init(wallets: WalletsCreating) {
         self.wallets = wallets
         super.init()
-        title = "New wallet"
+        title = localize("NEW_WALLET_SCREEN_NAV_TITLE")
     }
     
     override func viewDidLoad() {
@@ -55,7 +55,7 @@ final class NewWalletViewController: BaseViewController<NewWalletView>, UITextFi
             return
         }
         
-        let _alert = UIAlertController.showSpinner(message: "Creating wallet")
+        let _alert = UIAlertController.showSpinner(message: localize("NEW_WALLET_SCREEN_CREATING_WALLET"))
         alert = _alert
         present(_alert, animated: true)
         
@@ -65,8 +65,8 @@ final class NewWalletViewController: BaseViewController<NewWalletView>, UITextFi
                     self?.alert?.dismiss(animated: false) {
                         if let this = self {
                             UIAlertController.showError(
-                                title: "Create wallet",
-                                message: "Wallet with name - \(this.name) is already exist.",
+                                title: localize("NEW_WALLET_SCREEN_CREATE_WALLET_ACTION_TITLE"),
+                                message: localize("NEW_WALLET_SCREEN_ERROR_MESSAGE", this.name),
                                 presentOn: this)
                         }
                     }

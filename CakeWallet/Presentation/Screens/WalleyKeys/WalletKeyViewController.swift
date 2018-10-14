@@ -63,13 +63,13 @@ final class WalletKeyViewController: BaseViewController<WalletKeyView>, UITableV
             
             switch self {
             case .publicView:
-                str = "Public view"
+                str = localize("WALLET_KEYS_SCREEN_PUBLIC_VIEW")
             case .secretView:
-                str = "Secret view"
+                str = localize("WALLET_KEYS_SCREEN_SECRET_VIEW")
             case .publicSpend:
-                str = "Public spend"
+                str = localize("WALLET_KEYS_SCREEN_PUBLIC_SPEND")
             case .secretSpend:
-                str = "Secret spend"
+                str = localize("WALLET_KEYS_SCREEN_SECRET_SPEND")
             }
             
             return str
@@ -94,7 +94,7 @@ final class WalletKeyViewController: BaseViewController<WalletKeyView>, UITableV
     }
     
     override func configureBinds() {
-        title = "Keys"
+        title = localize("WALLET_KEYS_SCREEN_NAV_TITLE")
         contentView.table.register(
             WalletKeysUITableViewCell.self,
             forCellReuseIdentifier: WalletKeysUITableViewCell.identifier)

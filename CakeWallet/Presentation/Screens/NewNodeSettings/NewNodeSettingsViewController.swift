@@ -17,7 +17,7 @@ final class NewNodeSettingsViewController: BaseViewController<NewNodeSettingsVie
     }
     
     override func configureBinds() {
-        title = "Node settings"
+        title = localize("NEW_NODE_SCREEN_NAV_TITLE")
         contentView.saveButton.addTarget(self, action: #selector(save), for: .touchUpInside)
         contentView.resetSettings.addTarget(self, action: #selector(onResetSetting), for: .touchUpInside)
     }
@@ -40,13 +40,13 @@ final class NewNodeSettingsViewController: BaseViewController<NewNodeSettingsVie
     @objc
     private func onResetSetting() {
         let alert = UIAlertController(
-            title: "Reset settings",
-            message: "Are you sure that you want reset settings to default ?",
+            title: localize("RESET"),
+            message: localize("NEW_NODE_SCREEN_RESET_SETTINGS_CONFIRM_DESCRIPTION"),
             preferredStyle: .alert)
-        let ok = UIAlertAction(title: "Ok", style: .default) { [weak self] _ in
+        let ok = UIAlertAction(title: localize("NEW_NODE_SCREEN_RESET_SETTINGS_CONFIRM_CONFIRM_ACTION"), style: .default) { [weak self] _ in
             self?.setSettings(ConnectionSettings(uri: "", login: "", password: ""))
         }
-        let cancel = UIAlertAction(title: "Cancel", style: .cancel)
+        let cancel = UIAlertAction(title: localize("CANCEL"), style: .cancel)
         alert.addAction(ok)
         alert.addAction(cancel)
         present(alert, animated: true)
@@ -54,7 +54,7 @@ final class NewNodeSettingsViewController: BaseViewController<NewNodeSettingsVie
     
     @objc
     private func save() {
-        let _alert = UIAlertController.showSpinner(message: "Saving")
+        let _alert = UIAlertController.showSpinner(message: localize("NEW_NODE_SCREEN_SAVING"))
         present(_alert, animated: true)
         
         guard
@@ -73,7 +73,7 @@ final class NewNodeSettingsViewController: BaseViewController<NewNodeSettingsVie
         do {
             try nodesList.addNode(settings: connectionSettings)
             _alert.dismiss(animated: true) {
-                UIAlertController.showInfo(title: nil, message: "Saved", presentOn: self)
+                UIAlertController.showInfo(title: nil, message: localize("NEW_NODE_SCREEN_SAVED"), presentOn: self)
             }
         } catch {
             _alert.dismiss(animated: true) { [weak self] in

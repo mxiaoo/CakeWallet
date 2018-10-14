@@ -160,6 +160,8 @@
 		0CFCAFE61FD5F3A2004EF698 /* Wallets+WalletsSeedFetchable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CFCAFE51FD5F3A2004EF698 /* Wallets+WalletsSeedFetchable.swift */; };
 		7D688A03F774B0C06AB7D747 /* Pods_CakeWallet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CECAE07ED95A367F0CB6700 /* Pods_CakeWallet.framework */; };
 		8D14380F2134992E00E8A011 /* libboost.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D14380E2134992E00E8A011 /* libboost.a */; };
+		8DE13C3E2173CE0B00B89D5D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8DE13C402173CE0C00B89D5D /* Localizable.strings */; };
+		8DE13C432173D02300B89D5D /* Localize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DE13C422173D02300B89D5D /* Localize.swift */; };
 		8DEA7306212209290054D3DF /* liblmdb.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DEA7305212209290054D3DF /* liblmdb.a */; };
 		CA032E2E2056C7DE009B24B9 /* ExchangeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA032E2D2056C7DE009B24B9 /* ExchangeView.swift */; };
 		CA032E302056F937009B24B9 /* ExchangeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA032E2F2056F937009B24B9 /* ExchangeTableViewCell.swift */; };
@@ -399,6 +401,8 @@
 		3848B085667C2AC96BB45F12 /* Pods-CakeWallet.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CakeWallet.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CakeWallet/Pods-CakeWallet.debug.xcconfig"; sourceTree = "<group>"; };
 		561E69E83825EF25D7339410 /* Pods_Cryptonist.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Cryptonist.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D14380E2134992E00E8A011 /* libboost.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libboost.a; path = External/ofxiOSBoost/libs/boost/ios/libboost.a; sourceTree = "<group>"; };
+		8DE13C3F2173CE0C00B89D5D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		8DE13C422173D02300B89D5D /* Localize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localize.swift; sourceTree = "<group>"; };
 		8DEA7305212209290054D3DF /* liblmdb.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = liblmdb.a; path = "External/monero-gui/monero/build/release/external/db_drivers/liblmdb/liblmdb.a"; sourceTree = "<group>"; };
 		CA032E2D2056C7DE009B24B9 /* ExchangeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeView.swift; sourceTree = "<group>"; };
 		CA032E2F2056F937009B24B9 /* ExchangeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeTableViewCell.swift; sourceTree = "<group>"; };
@@ -695,6 +699,7 @@
 			children = (
 				0C5BD397202C788100992E17 /* Terms_of_Use.rtf */,
 				CA30F12C207698B90058C4CF /* NodesList.plist */,
+				8DE13C402173CE0C00B89D5D /* Localizable.strings */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -737,6 +742,7 @@
 				CAF9A4782079641D0069630E /* NodeConnectionControl.swift */,
 				CAF9A47420795BCA0069630E /* NodesList.swift */,
 				CAF9A47620795BF00069630E /* ConnectionSettings+CellItem.swift */,
+				8DE13C422173D02300B89D5D /* Localize.swift */,
 			);
 			path = Lib;
 			sourceTree = "<group>";
@@ -1225,6 +1231,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8DE13C3E2173CE0B00B89D5D /* Localizable.strings in Resources */,
 				0C4D2E161FF81E2D00019B6E /* Launch Screen.storyboard in Resources */,
 				0C5BD398202C788100992E17 /* Terms_of_Use.rtf in Resources */,
 				CA30F12D207698B90058C4CF /* NodesList.plist in Resources */,
@@ -1432,6 +1439,7 @@
 				0C62FBB52022C1F8005A8F2E /* WalletProxy.swift in Sources */,
 				0CE2AD8920211DD40069756A /* AccountError.swift in Sources */,
 				0C62EA8120225089005A8F2E /* Stringify.swift in Sources */,
+				8DE13C432173D02300B89D5D /* Localize.swift in Sources */,
 				0C1D348E1FBC7C29005F2B86 /* LoginViewController.swift in Sources */,
 				0C62FBD42022FAC4005A8F2E /* MoneroWalletChange.swift in Sources */,
 				0C22E48F1F8D34CB00C12A14 /* PinPasswordView.swift in Sources */,
@@ -1523,11 +1531,23 @@
 		};
 /* End PBXTargetDependency section */
 
+/* Begin PBXVariantGroup section */
+		8DE13C402173CE0C00B89D5D /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8DE13C3F2173CE0C00B89D5D /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
 		0C289FF91F87CF4C003C1826 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -1585,6 +1605,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";

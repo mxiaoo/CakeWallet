@@ -39,9 +39,9 @@ final class RecoveryWalletFromKeysViewController: BaseViewController<RecoveryWal
     }
     
     override func configureBinds() {
-        title = "Recover wallet"
+        title = localize("RECOVERY_WALLET_SCREEN_NAV_TITLE")
         contentView.confirmButton.addTarget(self, action: #selector(confirm), for: .touchUpInside)
-        contentView.watchOnlyDescriptionLabel.text = "* Leave this blank for a watch only wallet."
+        contentView.watchOnlyDescriptionLabel.text = localize("RECOVERY_WALLET_SCREEN_WATCH_ONLY_DESCRIPTION")
         contentView.restoreFromHeightView.datePicker.addTarget(self, action: #selector(onDateChange(_:)), for: .valueChanged)
     }
     
@@ -73,7 +73,7 @@ final class RecoveryWalletFromKeysViewController: BaseViewController<RecoveryWal
             return
         }
         
-        let _alert = UIAlertController.showSpinner(message: "Recovering wallet")
+        let _alert = UIAlertController.showSpinner(message: localize("RECOVERY_WALLET_SCREEN_RECOVERING_WALLET"))
         alert = _alert
         present(_alert, animated: true)
         

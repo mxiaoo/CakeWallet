@@ -46,7 +46,7 @@ final class LoginViewController: BaseViewController<BaseView>, BiometricAuthenti
     }
     
     private func onBiometricLogin() {
-        let alert =  UIAlertController.showSpinner(message: "Unlocking your wallet")
+        let alert =  UIAlertController.showSpinner(message: localize("LOGIN_SCREEN_UNLOCKING_WALLET_TITLE"))
         present(alert, animated: true)
         
         account.loadCurrentWallet()
@@ -63,7 +63,7 @@ final class LoginViewController: BaseViewController<BaseView>, BiometricAuthenti
     }
     
     private func loadWallet(withPassword password: String) {
-        let alert =  UIAlertController.showSpinner(message: "Unlocking your wallet")
+        let alert =  UIAlertController.showSpinner(message: localize("LOGIN_SCREEN_UNLOCKING_WALLET_TITLE"))
         present(alert, animated: true)
         
         account.login(withPassword: password)
@@ -93,15 +93,15 @@ final class LoginViewController: BaseViewController<BaseView>, BiometricAuthenti
     }
     
     private func recoveryWalletWithError() {
-        let alert = UIAlertController(title: nil, message: "We are having trouble loading your wallet file as it may be damaged.  We can try to recover your wallet or you can open/add another wallet.", preferredStyle: .alert)
-        let recoveryAction = UIAlertAction(title: "Yes, try to recover my wallet", style: .default) { _ in
+        let alert = UIAlertController(title: nil, message: localize("LOAD_WALLET_SCREEN_LOADING_ERROR_BODY"), preferredStyle: .alert)
+        let recoveryAction = UIAlertAction(title: localize("LOAD_WALLET_SCREEN_RECOVER_WALLET"), style: .default) { _ in
             if let walletName = self.account.currentWalletName {
                 self.onRecoveryWallet?(walletName)
             } else {
                 print("Current wallet is not set")
             }
         }
-        let walletsAction = UIAlertAction(title: "I will open/add another wallet", style: .default) { _ in
+        let walletsAction = UIAlertAction(title: localize("LOAD_WALLET_SCREEN_OPEN_ANOTHER_WALLET"), style: .default) { _ in
             self.onShowWalletsScreen?()
         }
         alert.addAction(recoveryAction)
@@ -110,8 +110,8 @@ final class LoginViewController: BaseViewController<BaseView>, BiometricAuthenti
     }
     
     private func showWalletsList() {
-        let alert = UIAlertController(title: nil, message: "We had some trouble loading your wallet. Please try to recover it using your seed in the setting screen.", preferredStyle: .alert)
-        let okAction = UIAlertAction(title: "Ok", style: .default) { _ in
+        let alert = UIAlertController(title: nil, message: localize("LOAD_WALLET_SCREEN_ERROR_LOADING_ANOTHER"), preferredStyle: .alert)
+        let okAction = UIAlertAction(title: localize("OK"), style: .default) { _ in
             self.onShowWalletsScreen?()
         }
         alert.addAction(okAction)
@@ -153,7 +153,7 @@ final class AuthenticateViewController: BaseViewController<BaseView>, BiometricA
     }
     
     private func authentication(withPassword password: String) {
-        let alert =  UIAlertController.showSpinner(message: "Authenticating")
+        let alert =  UIAlertController.showSpinner(message: localize("AUTHENTICATING"))
         present(alert, animated: true)
         
         account.authenticate(password: password)

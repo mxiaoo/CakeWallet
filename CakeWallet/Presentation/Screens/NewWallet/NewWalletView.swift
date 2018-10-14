@@ -14,8 +14,8 @@ final class NewWalletView: BaseView {
     let nextButton: UIButton
     
     required init() {
-        walletNameTextField = FloatingLabelTextField(placeholder: "Wallet name")
-        nextButton = PrimaryButton(title: "Continue")
+        walletNameTextField = FloatingLabelTextField(placeholder: localize("WALLET_NAME"))
+        nextButton = PrimaryButton(title: localize("CONTINUE"))
         super.init()
     }
     

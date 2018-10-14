@@ -27,7 +27,7 @@ final class WelcomeView: BaseView {
         welcomeLabel = UILabel(font: .avenirNextMedium(size: 64))
         welcomeSubtitleLabel = UILabel(font: .avenirNextMedium(size: 32))
         descriptionTextView = UITextView()
-        startButton = PrimaryButton(title: "Next")
+        startButton = PrimaryButton(title: localize("NEXT"))
         super.init()
     }
     

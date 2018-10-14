@@ -12,7 +12,7 @@ import QRCodeReader
 import FontAwesome_swift
 
 final class SendViewController: BaseViewController<SendView> {
-    private static let allSymbol = "All"
+    private static let allSymbol = localize("ALL")
     private lazy var readerVC: QRCodeReaderViewController = {
         let builder = QRCodeReaderViewControllerBuilder {
             $0.reader = QRCodeReader(metadataObjectTypes: [.qr], captureDevicePosition: .back)
@@ -72,7 +72,7 @@ final class SendViewController: BaseViewController<SendView> {
     }
     
     override func configureDescription() {
-        title = "Send"
+        title = localize("SEND_SCREEN_NAV_TITLE")
         updateTabBarIcon(name: .paperPlane)
     }
 
@@ -102,9 +102,9 @@ final class SendViewController: BaseViewController<SendView> {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         calculateEstimatedFee()
-        contentView.amountInAnotherCuncurrencyTextField.title = "\(currency.stringify().uppercased()) (approximate)"
+        contentView.amountInAnotherCuncurrencyTextField.title = "\(currency.stringify().uppercased()) (\(localize("APPROXIMATE").lowercased())"
         contentView.amountInAnotherCuncurrencyTextField.placeholder = "\(currency.stringify().uppercased()): 0.00"
-        contentView.feePriorityDescriptionLabel.text = "Currently the fee is set at \(priority.stringify()) priority. Transaction priority can be adjusted in the settings."
+        contentView.feePriorityDescriptionLabel.text = localize("SEND_SCREEN_FEE_PRIORITY_DESCRIPTION", priority.stringify())
     }
     
     private func updateUnlockedBalance(_ unlockedBalance: Amount) {
@@ -136,17 +136,17 @@ final class SendViewController: BaseViewController<SendView> {
     @objc
     private func send() {
         let alert = UIAlertController(
-            title: "Creating transaction",
-            message: "Confirm sending",
+            title: localize("SEND_SCREEN_CREATING_TRANSACTION"),
+            message: localize("SEND_SCREEN_CONFIRM_SENDING"),
             preferredStyle: .alert)
-        let ok = UIAlertAction(title: "Send", style: .default) { [weak self] _ in
+        let ok = UIAlertAction(title: localize("SEND"), style: .default) { [weak self] _ in
             guard let this = self else {
                 return
             }
             
             this.createTransaction()
         }
-        let cancel = UIAlertAction(title: "Cancel", style: .cancel)
+        let cancel = UIAlertAction(title: localize("CANCEL"), style: .cancel)
         alert.addAction(ok)
         alert.addAction(cancel)
         parent?.present(alert, animated: true)
@@ -172,7 +172,7 @@ final class SendViewController: BaseViewController<SendView> {
     
     @objc
     private func setAllAmount() {
-        amount = "All"
+        amount = localize("ALL")
         contentView.amountInMoneroTextField.text = SendViewController.allSymbol
         contentView.amountInAnotherCuncurrencyTextField.text = "--\(SendViewController.allSymbol)--"
     }
@@ -197,7 +197,7 @@ final class SendViewController: BaseViewController<SendView> {
     }
     
     private func createTransaction() {
-        let alert = UIAlertController.showSpinner(message: "Creating transaction")
+        let alert = UIAlertController.showSpinner(message: localize("SEND_SCREEN_CREATING_TRANSACTION"))
         parent?.present(alert, animated: true)
         let amount = self.amount.lowercased() == SendViewController.allSymbol.lowercased()
             ? nil
@@ -221,10 +221,10 @@ final class SendViewController: BaseViewController<SendView> {
     private func commitPendingTransaction(_ pendingTransaction: PendingTransaction) {
         let txDescription = pendingTransaction.description
         let alert = UIAlertController(
-            title: "Confirm sending",
-            message: "Commit transaction\nAmount: \(txDescription.amount.formatted())\nFee: \(txDescription.fee.formatted())",
+            title: localize("SEND_SCREEN_CONFIRM_SENDING"),
+            message: localize("SEND_SCREEN_CONFIRM_SENDING_DETAILS", txDescription.amount.formatted(), txDescription.fee.formatted()),
             preferredStyle: .alert)
-        let ok = UIAlertAction(title: "Ok", style: .default) { _ in
+        let ok = UIAlertAction(title: localize("SEND"), style: .default) { _ in
             pendingTransaction.commit()
                 .then(on: DispatchQueue.main) { [weak self] _ -> Void in
                     self?.resetForm()
@@ -233,7 +233,7 @@ final class SendViewController: BaseViewController<SendView> {
                     self?.showError(error)
                 }
         }
-        let cancel = UIAlertAction(title: "Cancel", style: .cancel)
+        let cancel = UIAlertAction(title: localize("CANCEL"), style: .cancel)
         alert.addAction(ok)
         alert.addAction(cancel)
         parent?.present(alert, animated: true)
@@ -250,10 +250,10 @@ final class SendViewController: BaseViewController<SendView> {
     
     private func showSentTx(description: PendingTransactionDescription) {
         let alert = UIAlertController(
-            title: "Transaction created",
-            message: "Transaction created!",
+            title: localize("SEND_SCREEN_TRANSACTION_CREATED"),
+            message: localize("SEND_SCREEN_TRANSACTION_CREATED") + "!",
             preferredStyle: .alert)
-        let ok = UIAlertAction(title: "Ok", style: .default)
+        let ok = UIAlertAction(title: localize("OK"), style: .default)
         alert.addAction(ok)
         parent?.present(alert, animated: true)
     }

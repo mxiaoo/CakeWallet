@@ -61,12 +61,12 @@ final class BalanceView: BaseView {
     override func configureView() {
         super.configureView()
         backgroundColor = .clear
-        balanceDescriptionLabel.text = "Total balance (XHV)".uppercased()
+        balanceDescriptionLabel.text = localize("BALANCE_VIEW_TOTAL_BALANCE_DESCRIPTION").uppercased()
         balanceDescriptionLabel.textColor = .lightGray
         balanceLabel.numberOfLines = 0
-        alternativeBalanceDescriptionLabel.text = "Rate balance".uppercased()
+        alternativeBalanceDescriptionLabel.text = localize("BALANCE_VIEW_RATE_BALANCE_TITLE").uppercased()
         alternativeBalanceDescriptionLabel.textColor = .lightGray
-        unlockedBalanceDescriptionLabel.text = "Available  balance (XHV)".uppercased()
+        unlockedBalanceDescriptionLabel.text = localize("BALANCE_VIEW_AVAILABLE_BALANCE_TITLE").uppercased()
         unlockedBalanceDescriptionLabel.textColor = .lightGray
         
         // FIX-ME: Unnamed constant
@@ -133,7 +133,7 @@ final class BalanceView: BaseView {
     }
     
     func setCurrency(_ currency: Currency) {
-        alternativeBalanceDescriptionLabel.text = "Balance in (\(currency.symbol))".uppercased()
+        alternativeBalanceDescriptionLabel.text = localize("BALANCE_VIEW_BALANCE_IN_OTHER_CURRENCY_TITLE", currency.symbol).uppercased()
     }
 }
 

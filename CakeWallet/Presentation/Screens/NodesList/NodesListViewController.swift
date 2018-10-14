@@ -33,9 +33,9 @@ final class NodesListViewController: BaseViewController<NodesListView>, UITableV
     }
     
     override func configureBinds() {
-        title = "Nodes"
+        title = localize("NODE_SWITCH_SCREEN_NAV_TITLE")
         let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(onPresentNewNodeScreen))
-        let resetButton = UIBarButtonItem(title: "Reset", style: .plain, target: self, action: #selector(reset))
+        let resetButton = UIBarButtonItem(title: localize("RESET"), style: .plain, target: self, action: #selector(reset))
         navigationItem.rightBarButtonItems = [addButton, resetButton]
         contentView.table.delegate = self
         contentView.table.dataSource = self
@@ -107,14 +107,14 @@ final class NodesListViewController: BaseViewController<NodesListView>, UITableV
         if nodesList[indexPath.row] != currentNodeSettings {
             let nodeSettings = nodesList[indexPath.row]
             let alert = UIAlertController(
-                title: "Change node",
-                message: "Are you sure that you want to change node to selected node ?",
+                title: localize("NODE_SWITCH_SCREEN_CHANGE_NODE_TITLE"),
+                message: localize("NODE_SWITCH_SCREEN_CHANGE_NODE_BODY"),
                 preferredStyle: .alert)
-            let ok = UIAlertAction(title: "Change", style: .default) { [weak self] _ in
+            let ok = UIAlertAction(title: localize("CHANGE"), style: .default) { [weak self] _ in
                 self?.changeCurrentNode(to: nodeSettings)
                 self?.contentView.table.deselectRow(at: indexPath, animated: true)
             }
-            let cancel = UIAlertAction(title: "Cancel", style: .cancel) { [weak self] _ in
+            let cancel = UIAlertAction(title: localize("CANCEL"), style: .cancel) { [weak self] _ in
                 self?.contentView.table.deselectRow(at: indexPath, animated: true)
             }
             alert.addAction(ok)
@@ -128,7 +128,7 @@ final class NodesListViewController: BaseViewController<NodesListView>, UITableV
             return []
         }
 
-        let deleteAction = UITableViewRowAction(style: .default, title: "Delete") { [weak self] (_, indexPath) in
+        let deleteAction = UITableViewRowAction(style: .default, title: localize("DELETE")) { [weak self] (_, indexPath) in
             self?.removeNode(at: indexPath)
         }
         
@@ -153,14 +153,14 @@ final class NodesListViewController: BaseViewController<NodesListView>, UITableV
     @objc
     private func reset() {
         let alert = UIAlertController(
-            title: "Reset nodes list to default",
-            message: "Are you sure that you want to reset nodes list to deault ?",
+            title: localize("NODE_SWITCH_SCREEN_RESET_NODES_TITLE"),
+            message: localize("NODE_SWITCH_SCREEN_RESET_NODES_BODY"),
             preferredStyle: .alert)
         let ok = UIAlertAction(title: "Reset", style: .default) { [weak self] _ in
             do {
                 let _alert = UIAlertController(
                     title: nil,
-                    message: "Connecting to default node",
+                    message: localize("NODE_SWITCH_SCREEN_CONNECTING_TO_DEFAULT_NODE"),
                     preferredStyle: .alert)
                 self?.present(_alert, animated: true)
                 try self?.nodesList.reset()
@@ -172,7 +172,7 @@ final class NodesListViewController: BaseViewController<NodesListView>, UITableV
                     }.then { _ -> Void in
                         _alert.dismiss(animated: true) {
                             if let _self = self {
-                                UIAlertController.showInfo(message: "Changed and connected", presentOn: _self)
+                                UIAlertController.showInfo(message: localize("NODE_SWITCH_SCREEN_CHANGED_AND_CONNECTED"), presentOn: _self)
                             }
                         }
                     }.catch { error in
@@ -186,14 +186,14 @@ final class NodesListViewController: BaseViewController<NodesListView>, UITableV
                 }
             }
         }
-        let cancel = UIAlertAction(title: "Cancel", style: .cancel)
+        let cancel = UIAlertAction(title: localize("CANCEL"), style: .cancel)
         alert.addAction(ok)
         alert.addAction(cancel)
         present(alert, animated: true)
     }
     
     private func changeCurrentNode(to connectionSettings: ConnectionSettings) {
-        let alert = UIAlertController.showSpinner(message: "Connecting")
+        let alert = UIAlertController.showSpinner(message: localize("CONNECTING"))
         present(alert, animated: true) { [weak self] in
             self?.account.change(connectionSettings: connectionSettings)
                 .then { _ -> Void in
@@ -201,7 +201,7 @@ final class NodesListViewController: BaseViewController<NodesListView>, UITableV
                         self?.setCurrenctNode(settings: connectionSettings)
                         
                         if let this = self {
-                            UIAlertController.showInfo(message: "Changed and connected", presentOn: this)
+                            UIAlertController.showInfo(message: localize("NODE_SWITCH_SCREEN_CHANGED_AND_CONNECTED"), presentOn: this)
                         }
                     }
                 }.catch { error in
@@ -214,10 +214,10 @@ final class NodesListViewController: BaseViewController<NodesListView>, UITableV
     
     private func removeNode(at indexPath: IndexPath) {
         let alert = UIAlertController(
-            title: "Remove node",
-            message: "Are you sure that you want to delete selected node ?",
+            title: localize("NODE_SWITCH_SCREEN_REMOVE_NODE_TITLE"),
+            message: localize("NODE_SWITCH_SCREEN_REMOVE_NODE_BODY"),
             preferredStyle: .alert)
-        let ok = UIAlertAction(title: "Remove", style: .destructive) { [weak self] _ in
+        let ok = UIAlertAction(title: localize("REMOVE"), style: .destructive) { [weak self] _ in
             do {
                 try self?.nodesList.remove(at: indexPath.row)
                 self?.contentView.table.reloadData()
@@ -225,7 +225,7 @@ final class NodesListViewController: BaseViewController<NodesListView>, UITableV
                 self?.showError(error)
             }
         }
-        let cancel = UIAlertAction(title: "Cancel", style: .cancel)
+        let cancel = UIAlertAction(title: localize("CANCEL"), style: .cancel)
         alert.addAction(ok)
         alert.addAction(cancel)
         present(alert, animated: true)

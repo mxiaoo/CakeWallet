@@ -32,7 +32,7 @@ final class PinPasswordViewController: BaseViewController<PinPasswordView>, PinP
         pin = []
         canSetDescription = true
         super.init()
-        descriptionText = "Enter your pin"
+        descriptionText = localize("PIN_SCREEN_ENTER_PIN")
         configureKeyboardPin()
     }
 
@@ -84,7 +84,7 @@ final class PinPasswordViewController: BaseViewController<PinPasswordView>, PinP
     }
     
     private func set(banTime: TimeInterval) {
-        let baseStr = "Try enter pin after: "
+        let baseStr = localize("PIN_SCREEN_PIN_INPUT_BLOCKED")
         let time = banTime - Date().timeIntervalSince1970
 
         if time > 0 {

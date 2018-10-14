@@ -14,8 +14,8 @@ final class RecoveryWalletOptionsView: BaseView {
     let keysButton: UIButton
     
     required init() {
-        seedButton = PrimaryButton(title: "Recover from seed")
-        keysButton = PrimaryButton(title: "Recover from keys")
+        seedButton = PrimaryButton(title: localize("RECOVERY_WALLET_OPTIONS_SCREEN_RECOVER_SEED"))
+        keysButton = PrimaryButton(title: localize("RECOVERY_WALLET_OPTIONS_SCREEN_RECOVER_KEYS"))
         orLabel = UILabel()
         super.init()
     }

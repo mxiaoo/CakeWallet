@@ -31,7 +31,7 @@ final class DashboardView: BaseView {
             iconImage: UIImage(named: "dashboard_haven_logo.png")!.resized(to: CGSize(width: 64, height: 64)))
         exchangeButton = IconView(fontAwesomeIcon: .exchange)
         buyButton = IconView(fontAwesomeIcon: .shoppingCart)
-        showAllTransactionsButton = SecondaryButton(title: "Show all")
+        showAllTransactionsButton = SecondaryButton(title: localize("DASBOARD_SCREEN_SHOW_ALL"))
         super.init()
     }
     

@@ -24,10 +24,10 @@ final class SendView: BaseView {
     required init() {
         addressTextField = FloatingLabelTextField(placeholder: "Haven address")
         amountInMoneroTextField = FloatingLabelTextField(placeholder: "XHV: 0.0000", title: "XHV")
-        amountInAnotherCuncurrencyTextField = FloatingLabelTextField(placeholder: "USD: 0.00", title: "USD (approximate)")
-        paymenyIdTextField = FloatingLabelTextField(placeholder: "Payment ID (optional)", title: "Payment ID")
-        sendButton = PrimaryButton(title: "Send".uppercased())
-        let _qrScanButton = SecondaryButton(title: "Scan".uppercased())
+        amountInAnotherCuncurrencyTextField = FloatingLabelTextField(placeholder: "USD: 0.00", title: "USD (\(localize("APPROXIMATE").lowercased())")
+        paymenyIdTextField = FloatingLabelTextField(placeholder: localize("RECEIVE_SCREEN_PAYMENT_ID_PLACEHOLDER"), title: localize("RECEIVE_SCREEN_PAYMENT_ID_TITLE"))
+        sendButton = PrimaryButton(title: localize("SEND").uppercased())
+        let _qrScanButton = SecondaryButton(title: localize("SCAN").uppercased())
         qrScanButton = _qrScanButton
         _qrScanButton.setLeftImage(
             UIImage.fontAwesomeIcon(
@@ -38,7 +38,7 @@ final class SendView: BaseView {
         estimatedValueLabel = UILabel(font: .avenirNextMedium(size: 15))
         estimatedValueLabel.numberOfLines = 0
         feePriorityDescriptionLabel = UILabel(font: .avenirNextMedium(size: 12))
-        allAmountButton = SecondaryButton(title: "All".uppercased())
+        allAmountButton = SecondaryButton(title: localize("ALL").uppercased())
         innerView = CardView()
         super.init()
     }
@@ -63,7 +63,7 @@ final class SendView: BaseView {
         backgroundColor = .havenLightGrey
         feePriorityDescriptionLabel.numberOfLines = 0
         feePriorityDescriptionLabel.textColor = .gray
-        estimatedTitleLabel.text = "Estimated fee:"
+        estimatedTitleLabel.text = localize("SEND_SCREEN_ESTIMATED_FEE")
         estimatedValueLabel.text = "0"
         estimatedValueLabel.textAlignment = .right
     }

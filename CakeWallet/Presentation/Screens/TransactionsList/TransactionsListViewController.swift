@@ -32,7 +32,7 @@ final class TransactionsListViewController: BaseViewController<TransactionsListV
     }
     
     override func configureDescription() {
-        title = "Transactions"
+        title = localize("TRANSACTIONS_SCREEN_NAV_TITLE")
     }
     
     override func configureBinds() {
@@ -79,9 +79,9 @@ final class TransactionsListViewController: BaseViewController<TransactionsListV
         let date = _transactions[section].date
         
         if Calendar.current.isDateInToday(date) {
-            title = "Today"
+            title = localize("TODAY")
         } else if Calendar.current.isDateInYesterday(date) {
-            title = "Yesterday"
+            title = localize("YESTERDAY")
         } else {
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "EEEE, MMM d"

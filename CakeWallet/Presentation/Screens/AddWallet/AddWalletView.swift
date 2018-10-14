@@ -16,8 +16,8 @@ final class AddWalletView: BaseView {
     let recoveryDescriptionLabel: UILabel
     
     required init() {
-        newWalletButton = PrimaryButton(title: "Create a new wallet")
-        recoveryWalletButton = SecondaryButton(title: "Recover wallet")
+        newWalletButton = PrimaryButton(title: localize("CREATE_NEW_WALLET_ACTION_BUTTON"))
+        recoveryWalletButton = SecondaryButton(title: localize("CREATE_NEW_WALLET_RECOVER_WALLET_ACTION_BUTTON"))
         orLabel = UILabel(font: UIFont.avenirNextMedium(size: 15))
         recoveryDescriptionLabel = UILabel(font: UIFont.avenirNextMedium(size: 12))
         super.init()
@@ -25,7 +25,7 @@ final class AddWalletView: BaseView {
     
     override func configureView() {
         super.configureView()
-        orLabel.text = "or"
+        orLabel.text = localize("OR")
         recoveryDescriptionLabel.textColor = UIColor.havenTextLightGrey
         recoveryDescriptionLabel.textAlignment = .center
         recoveryDescriptionLabel.numberOfLines = 0
